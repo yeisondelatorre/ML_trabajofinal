@@ -1,11 +1,10 @@
 # Transporte de pasasjeros en taxis de Nueva York
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+El conjunto de datos de viajes en taxi de la Ciudad de Nueva York proporciona una visión detallada de los patrones de movilidad urbana. Incluye registros de viajes tanto de taxis amarillos como verdes, así como de vehículos de alquiler, recopilando información precisa sobre la fecha y hora de recogida y entrega, las ubicaciones de estas paradas, la distancia del viaje, las tarifas detalladas, los métodos de pago y el número de pasajeros reportado por los conductores. Este conjunto de datos fue recopilado y proporcionado por proveedores tecnológicos autorizados bajo los programas TPEP/LPEP de la Comisión de Taxis y Limusinas de Nueva York (TLC). Los registros permiten analizar dinámicas de transporte, tendencias de tarifas y comportamiento de los pasajeros, proporcionando una ventana invaluable para la planificación urbana y el análisis del sistema de transporte en la ciudad.
+profundizar un poco del tema- Verificar [TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) Datos extraidos de la página oficial de NYC Taxi & Limousine commission
 
-Check out the content pages bundled with this sample book to see more.
+
+Consulte las páginas de contenido 
 
 ```{tableofcontents}
 ```
