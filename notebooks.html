@@ -384,6 +384,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-y-visualizacion-de-los-datos">Carga y visualización de los datos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#georreferenciacion-de-las-zonas-de-inicio-y-finalizacion-de-la-carrera">Georreferenciación de las zonas de inicio y finalización de la carrera</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccion-de-datos-faltantes-y-nulos">Inspección de datos faltantes y nulos</a></li>
 </ul>
 </li>
 </ul>
@@ -1064,7 +1065,7 @@ document.write(`
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_e0b76c15835ab5fe48d814c71c22869c {
+                #map_b45c3a9b0ad7675e6e04a880f0c81d26 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1078,14 +1079,14 @@ document.write(`
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_e0b76c15835ab5fe48d814c71c22869c&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_b45c3a9b0ad7675e6e04a880f0c81d26&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_e0b76c15835ab5fe48d814c71c22869c = L.map(
-                &quot;map_e0b76c15835ab5fe48d814c71c22869c&quot;,
+            var map_b45c3a9b0ad7675e6e04a880f0c81d26 = L.map(
+                &quot;map_b45c3a9b0ad7675e6e04a880f0c81d26&quot;,
                 {
                     center: [40.7128, -74.006],
                     crs: L.CRS.EPSG3857,
@@ -1102,7 +1103,7 @@ document.write(`
 
         
     
-            var tile_layer_440c29656679e7eccfd82a73b6133c05 = L.tileLayer(
+            var tile_layer_51983184f5203eeed98d2a6da0474ef0 = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -1119,1291 +1120,1291 @@ document.write(`
             );
         
     
-            tile_layer_440c29656679e7eccfd82a73b6133c05.addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            tile_layer_51983184f5203eeed98d2a6da0474ef0.addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ed3a4778f43c2dedcd5c8db660c3659d = L.circleMarker(
+            var circle_marker_63f632db1399708c7e028c0210bf3e59 = L.circleMarker(
                 [40.8071, -73.961],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c91c58e6f610409001928f445b5c7953 = L.circleMarker(
+            var circle_marker_4102718a81f6086264f68dc824e96a21 = L.circleMarker(
                 [40.785, -73.975],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d57dd0099ae6b6288047fb2513a633b4 = L.circleMarker(
+            var circle_marker_b4c5da1f11373eec43d173a4665b1467 = L.circleMarker(
                 [40.7847, -73.9523],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fe803a93281db46194ad82ccd82513d1 = L.circleMarker(
+            var circle_marker_4275e8d046bf4f6acc3d310a98d7167d = L.circleMarker(
                 [40.7612, -73.9442],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fdff744b3c91487c2ad6007855e184cd = L.circleMarker(
+            var circle_marker_65f859af9e9d46fe497f6d661e29dbfb = L.circleMarker(
                 [40.7549, -73.9808],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_47d59db34e2bdae6002e3148daeeaddb = L.circleMarker(
+            var circle_marker_7dce3f71da95ace293bf289874833ba3 = L.circleMarker(
                 [40.7566, -73.9689],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1992e4d4c71612f6445106b92b308533 = L.circleMarker(
+            var circle_marker_a65a5bfd07e52068ea40ea057e55384b = L.circleMarker(
                 [40.7661, -73.963],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ee267a932edb6d6695b076f1ab03e9cd = L.circleMarker(
+            var circle_marker_e6fdc9702837b89ae81f1811b19e3a5a = L.circleMarker(
                 [40.7475, -74.0024],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f12d7ad9484b63682997f81944c5deea = L.circleMarker(
+            var circle_marker_6b6f21ca2d7e351fa4848f4b9d50120b = L.circleMarker(
                 [40.7311, -73.979],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_3ba38201ddb7683ea8f7884a6bd8f335 = L.circleMarker(
+            var circle_marker_0e9b1d1f6196764e662a757fac20ce3d = L.circleMarker(
                 [40.745, -73.9819],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7afb1a9fed7b4c83a0a722a123f9fd34 = L.circleMarker(
+            var circle_marker_9080ced32b1d5c3722a0e96e6388ed9c = L.circleMarker(
                 [40.7365, -73.9857],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_82fdd49deb417951bd812c9ef87ec9be = L.circleMarker(
+            var circle_marker_8042931e4fdc96cdf29cd493332200b0 = L.circleMarker(
                 [40.8115, -73.9465],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2fe4b3b1740fddd6db4c536f80c7dcfd = L.circleMarker(
+            var circle_marker_9d78f21f835f554d47cc744285b08eef = L.circleMarker(
                 [40.823, -73.9453],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f047d9572e3888d9ed7c7d7be4dc5370 = L.circleMarker(
+            var circle_marker_c4bba6839071f49203e719da2a4e38e7 = L.circleMarker(
                 [40.7375, -73.9987],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_bbe96c5efe13925576e1f7c96387443a = L.circleMarker(
+            var circle_marker_bfc1890aad5562b8c9e4167399fcb36c = L.circleMarker(
                 [40.755, -73.985],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_cd8588a74d0934ef5f90baed063ce8b2 = L.circleMarker(
+            var circle_marker_266b8809ca4608a987e7449b8ce41984 = L.circleMarker(
                 [40.7769, -73.8737],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_35c1135a0125f17d4d34e75a5beec5ec = L.circleMarker(
+            var circle_marker_df7e37d6aaa4c4d78c5685d823a3d4a3 = L.circleMarker(
                 [40.7223, -73.9963],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0192a0eda991a2d49367d1edb0c596ab = L.circleMarker(
+            var circle_marker_ea3a806fc248085653b3b7e468658606 = L.circleMarker(
                 [40.7168, -74.007],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_4ea4bf59b143b697e3640af9162f8409 = L.circleMarker(
+            var circle_marker_22ee4ad7971d993d0ee3222ce68e3f97 = L.circleMarker(
                 [40.7736, -73.9567],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_973b0f823b505aa084342e00f9417df1 = L.circleMarker(
+            var circle_marker_aac50a4a67aa70395256c5f3d1419265 = L.circleMarker(
                 [40.7741, -73.9503],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f6c252a8ff14473e8d407da126806816 = L.circleMarker(
+            var circle_marker_011f99ba969d4adf9d7a4c1541c505ad = L.circleMarker(
                 [40.6413, -73.7781],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_77a74a193718ba7c82f7e9e4e07e1a81 = L.circleMarker(
+            var circle_marker_637e3209e865cde25a94bace48b82a11 = L.circleMarker(
                 [40.7038, -74.0148],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9f9f86f3c64fdeafb90090aa8412612b = L.circleMarker(
+            var circle_marker_d4ecd13a689dd0492ef78e7852ae4236 = L.circleMarker(
                 [40.7713, -73.9863],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_44fe0c91c9f469ab26efb2934ef3358c = L.circleMarker(
+            var circle_marker_82073bbc17b63c7626b1bbd69418223e = L.circleMarker(
                 [40.7336, -74.0033],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c6edcd884dfaf356b98e83d5ed1afaa5 = L.circleMarker(
+            var circle_marker_c7c524200c05c53a8961bd12d40c197a = L.circleMarker(
                 [40.7422, -73.9763],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1c9d60c575851c7c1e28a39b38daa35b = L.circleMarker(
+            var circle_marker_8f3dad5e1a7def32880921eb04e8f148 = L.circleMarker(
                 [40.7411, -73.9897],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_adc407d494256383cd74428a9536668d = L.circleMarker(
+            var circle_marker_054fb3f697dcc5c0fe458dbebf8c1fff = L.circleMarker(
                 [40.7551, -73.976],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c037a22b4f4e9107a8a825be7806a6ba = L.circleMarker(
+            var circle_marker_c1f7aba75018b25462b7095697710083 = L.circleMarker(
                 [40.7673, -73.9579],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f4c3fd30da977eff694a1363db6ee7d2 = L.circleMarker(
+            var circle_marker_740efac2c9bb7a594e2d521c3cec94b3 = L.circleMarker(
                 [40.745, -73.9989],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_34fd6efe3f0c544904d406effd11b94a = L.circleMarker(
+            var circle_marker_8579dfe617c075e0fb5a2b601d71ba6f = L.circleMarker(
                 [40.7057, -74.0125],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2b90eb4c466bb6531882a28659439a24 = L.circleMarker(
+            var circle_marker_6ca499d9a8e68f9efa2d558add0a5ad3 = L.circleMarker(
                 [40.7954, -73.9384],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c436360150b7261e409c89a791a3ceb7 = L.circleMarker(
+            var circle_marker_b3245e1d51878aa7bff298e15d915e7a = L.circleMarker(
                 [40.725, -73.9816],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_3096f6105e02cc14c87c604d179a93ba = L.circleMarker(
+            var circle_marker_cbe7ed1631da90b064ee5204b6e140f3 = L.circleMarker(
                 [40.7982, -73.9405],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9fd36f85255c163bdd91c07359d3f610 = L.circleMarker(
+            var circle_marker_9dba9dfdae9d26472f51215bee55c0df = L.circleMarker(
                 [40.7484, -73.968],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9ffad8e2aa33dd644ac9330ec2845b73 = L.circleMarker(
+            var circle_marker_3991d3c4572aa9fa622bedbc5d22a491 = L.circleMarker(
                 [40.7158, -73.9848],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fbdaccf52acb81b0f9ccfa799060d889 = L.circleMarker(
+            var circle_marker_4cf8000e6128a46e370d7dd3340fdf8a = L.circleMarker(
                 [40.759, -73.99],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a5829c8448a62152e39015e3337684ac = L.circleMarker(
+            var circle_marker_5d13818fe1874ebec1ef0659110a9361 = L.circleMarker(
                 [40.7702, -73.9873],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ec10a758c788bf897fd205ae2881fe6d = L.circleMarker(
+            var circle_marker_9a303696ada7267bac51bc649b3efb1a = L.circleMarker(
                 [40.7261, -73.9819],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f8c230e9e59eccbca67837de7f3c3d28 = L.circleMarker(
+            var circle_marker_aa7cc2f31961ed48fac602102943be93 = L.circleMarker(
                 [40.744, -73.993],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2123df946fde894c6afd71e06628fca1 = L.circleMarker(
+            var circle_marker_4b3817202b194abb9348cb809b848bd3 = L.circleMarker(
                 [40.711, -73.9865],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0d448bdf106d93fcf149062432f2e70b = L.circleMarker(
+            var circle_marker_c73ba7095e691f225f325db37a947a41 = L.circleMarker(
                 [40.715, -73.9985],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a36b47e466d246f8623394b4ad291d6f = L.circleMarker(
+            var circle_marker_25576af5ffb6cd3ea10703126fce19f2 = L.circleMarker(
                 [40.7851, -73.9683],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1d9b474f23065cda59dfd6ab6464c32c = L.circleMarker(
+            var circle_marker_13d96bb19511648bc7cd150c36fd6e55 = L.circleMarker(
                 [40.75, -73.9933],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_148b092fce9760de267182cef2316e49 = L.circleMarker(
+            var circle_marker_4ba86190958146fea7e073ad577a8058 = L.circleMarker(
                 [40.74, -74.0065],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_5f0bfa4329383a3d4f01ea2b179b4f75 = L.circleMarker(
+            var circle_marker_dd73ecc95b7ff9da1302a0b832c28b4e = L.circleMarker(
                 [40.7485, -73.9962],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_81330bc7fd50fe1b56c1cb9b0437c325 = L.circleMarker(
+            var circle_marker_9a46bebd5c909ece58f472c2cea4b83a = L.circleMarker(
                 [40.7323, -73.9988],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e929dc3a331a2b00921e3bb157fc0776 = L.circleMarker(
+            var circle_marker_4329dfb1980ba13496948f611612a6c7 = L.circleMarker(
                 [40.8105, -73.944],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d18fb59ac8f8fb6f4fed5a53739ff0dd = L.circleMarker(
+            var circle_marker_994a76d260be5e93400148de7cb8d525 = L.circleMarker(
                 [40.63, -74.028],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a04ee67c89d502d79f657260a1ed7257 = L.circleMarker(
+            var circle_marker_afcfc34a1878131f047afa5a0206763b = L.circleMarker(
                 [40.6075, -73.9887],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c2ee8a8099bf7285c43f73337b98c03f = L.circleMarker(
+            var circle_marker_6a89b798d51f615b4bde1f5a494fe2ca = L.circleMarker(
                 [40.6625, -73.9895],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e3496475e0b32bd2589c4e32460e9f22 = L.circleMarker(
+            var circle_marker_7e9f5ca51a78432391c3dfb2c25bc296 = L.circleMarker(
                 [40.7244, -73.9973],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0e4212bb890c05fa5f16a3742920c244 = L.circleMarker(
+            var circle_marker_f809de80074bf817afba1657c57a7bb0 = L.circleMarker(
                 [40.713, -74.016],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ea514648a13fac1f4b70710fb8ba3530 = L.circleMarker(
+            var circle_marker_94f18d54ce61e1a4e44ca0a7740bba9f = L.circleMarker(
                 [40.7115, -74.0134],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_78932676b1a6af647ff13c023a1f962b = L.circleMarker(
+            var circle_marker_d33e8da80056d417aa52fb883315f1e6 = L.circleMarker(
                 [40.6928, -73.9745],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d2059af5f9bbf7ca59c119ab5e2f9ded = L.circleMarker(
+            var circle_marker_0b0fb8efb9a1f92529bf76a01249e79d = L.circleMarker(
                 [40.7359, -73.9911],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0f05c81e9699c01d6fadf9df8269cb6a = L.circleMarker(
+            var circle_marker_e00523e25a42f28f86ed663ee9a26e12 = L.circleMarker(
                 [40.7275, -74.0063],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_84b4087d84aa82f3c04be8ba7d7819bc = L.circleMarker(
+            var circle_marker_75e7c698324a73a82d81cbb99a2d670c = L.circleMarker(
                 [40.7451, -73.9524],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c99cb0787a8f26c0c9599440207bef3a = L.circleMarker(
+            var circle_marker_b9a39294e6bae0bffd4175eb6ed04fbf = L.circleMarker(
                 [40.7729, -73.9511],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9558b9e95658ba6b464f8b1d9589ea1b = L.circleMarker(
+            var circle_marker_5ca3704eb1e73745ba7adfbd11f0e102 = L.circleMarker(
                 [40.7461, -73.9245],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fd8cb7b1f162176c26f1bca03b3c99a5 = L.circleMarker(
+            var circle_marker_5fa9e8ef8f9f28e196fb53d430574811 = L.circleMarker(
                 [40.762, -73.9886],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_121dafa1674b855f2040ff441d2967a6 = L.circleMarker(
+            var circle_marker_ba178d55938bcee4eaebbe2dcd7eebcd = L.circleMarker(
                 [40.81, -73.964],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_5f6e34e117f9a559cb6ae1752043ad16 = L.circleMarker(
+            var circle_marker_f3c128c460530e0ab7fcc2db4da52496 = L.circleMarker(
                 [40.7106, -73.9499],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f09ba5034d244487c5d1484c32827a05 = L.circleMarker(
+            var circle_marker_4475d74d47a5b1cd61259b3292b20b61 = L.circleMarker(
                 [40.674, -73.964],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_4fdbf1f193079b5a97277250894cd451 = L.circleMarker(
+            var circle_marker_fb4a8458f6ccd1958a334496942a1bf2 = L.circleMarker(
                 [40.696, -73.997],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9c170ab76cb50ef3c2307b914b7b4f25 = L.circleMarker(
+            var circle_marker_6139fcd6a661f6911a922125200fb2f6 = L.circleMarker(
                 [40.755, -73.994],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c4e8f60955a97d20594ae810fef6b508 = L.circleMarker(
+            var circle_marker_47c287245b41c718135243920fa2cf79 = L.circleMarker(
                 [40.827, -73.8798],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6034ee1c655eca51f701dddc9e05efa4 = L.circleMarker(
+            var circle_marker_35fc263d9d917ffda45903d018430eb9 = L.circleMarker(
                 [40.819, -73.919],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_67b59b25d8cc035418d9ecf0100b87bc = L.circleMarker(
+            var circle_marker_46e2e9f7c31490af329f25020669d165 = L.circleMarker(
                 [40.845, -73.94],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_70a8f99410b0ae3572ae06e865f1091b = L.circleMarker(
+            var circle_marker_6cfdfa7fbf21cf561f3b6661e30858ce = L.circleMarker(
                 [40.863, -73.931],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c8bc332981747a78d1988dbd2d9d8478 = L.circleMarker(
+            var circle_marker_9ebd14bd9f8d1221edcc3d3e0aa8ebc9 = L.circleMarker(
                 [40.709, -74.0036],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a13d27909e84687dc270dfc0e690b420 = L.circleMarker(
+            var circle_marker_a7039e5369d5677be4586e0945868210 = L.circleMarker(
                 [40.708, -74.01],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_08e0b4ead775bcc98119ed71594f60f8 = L.circleMarker(
+            var circle_marker_1171d4c9818f4679a31de4d74cd7e606 = L.circleMarker(
                 [40.6834, -73.9912],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a4e8e1872147e43b3b48166df8a1f071 = L.circleMarker(
+            var circle_marker_ad7eb742d2b6e1bf4d03472d8e134a26 = L.circleMarker(
                 [40.7459, -73.8881],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_153075d6db7c162329d0346a78d401e3 = L.circleMarker(
+            var circle_marker_114f797c30403a8e0a04cedbd2c66d06 = L.circleMarker(
                 [40.7651, -73.9065],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b3e1ec34ac1dd166b4ea4d3a149e0c38 = L.circleMarker(
+            var circle_marker_b3a856a7e95d129a6b7be583931d65ae = L.circleMarker(
                 [40.7255, -73.8576],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_57d83db2a4174aa5a063e45eb6ee3e66 = L.circleMarker(
+            var circle_marker_aea280ee77b5aa1ffce8c58ceee14687 = L.circleMarker(
                 [40.825, -73.9575],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e1b701da4014c505bfb3d27737c3190f = L.circleMarker(
+            var circle_marker_938a0daef04254255b36f554882131c5 = L.circleMarker(
                 [40.758, -73.9855],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c5a7adf1bd7c5f5c484e5be5cd6b6160 = L.circleMarker(
+            var circle_marker_a3dd4a7be228587a40526a445ee42c1f = L.circleMarker(
                 [40.7644, -73.9249],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d7d93dbbe288e9307b83960682f357d1 = L.circleMarker(
+            var circle_marker_8cda6fc11bfcd5d3993f4fcffc124c65 = L.circleMarker(
                 [40.7033, -73.987],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_313566cdac8a4b543bacc39347dbc385 = L.circleMarker(
+            var circle_marker_085feed14b948e0c674f02cec4e296ff = L.circleMarker(
                 [40.6402, -74.0103],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1c23e84f48975879fc893fbfbb6dd026 = L.circleMarker(
+            var circle_marker_c2785023147bd9c7d7ba77ff0a639e5d = L.circleMarker(
                 [40.867, -73.9204],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_519909cf7f5ec5faf066237f7c03c868 = L.circleMarker(
+            var circle_marker_07fca0e3867a3e929af140d5b9f1e323 = L.circleMarker(
                 [40.7197, -73.8449],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9ee99ae8c73e95eb0c0e2548f3d02ef2 = L.circleMarker(
+            var circle_marker_74b4b9aebd86d93460a2a31b8907bf29 = L.circleMarker(
                 [40.6928, -73.9866],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a739886415ca2969668aa0a34b16c676 = L.circleMarker(
+            var circle_marker_f66742a8f05c35e98d9501c13f08ba55 = L.circleMarker(
                 [40.7511, -73.883],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7d59ae60cde593d67d8a77c66bbbafa6 = L.circleMarker(
+            var circle_marker_d59257d909c6c7f6d7438b5a0c27284a = L.circleMarker(
                 [40.7411, -73.8805],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_00e5b2d4ef85d37dd8eb9ca1eaab837e = L.circleMarker(
+            var circle_marker_8005f30c6eb1e484199c6e5ff5d56a7f = L.circleMarker(
                 [40.6754, -74.0143],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f67b9afb4fb5a0194d3cc7d119d6b60d = L.circleMarker(
+            var circle_marker_df0b5d8271d0f17b77a5f9f8eca78afd = L.circleMarker(
                 [40.7162, -73.9546],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6c62f6f53d8b4cd12bde5192781f1482 = L.circleMarker(
+            var circle_marker_1597cec3d126896013411d7780c8854c = L.circleMarker(
                 [40.7712, -73.9221],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f2c8d28d5b599519f0a862bd82414530 = L.circleMarker(
+            var circle_marker_dbda3a4033b7533303351771d2b9a35e = L.circleMarker(
                 [40.8616, -73.8942],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_8c5f725332b009558d8a1a007b71a04c = L.circleMarker(
+            var circle_marker_92120b0fffad6b5966e29f177e1c7bf2 = L.circleMarker(
                 [40.6367, -73.9625],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_cf2462728e3c2192f2253431d50db42c = L.circleMarker(
+            var circle_marker_88feb134f7cebaec230dc3b247b7759d = L.circleMarker(
                 [40.677, -73.921],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1788d9d2043023370243183887627fc2 = L.circleMarker(
+            var circle_marker_2d1eb1a0b282fb19154518fb576e529c = L.circleMarker(
                 [40.7113, -73.9551],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e1b9b61c04133f925077b149177735ec = L.circleMarker(
+            var circle_marker_d21e955fd4c3a20aefeff6af1f7c7356 = L.circleMarker(
                 [40.6754, -73.92],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b8c31ede0b846484d07e241b06b285f3 = L.circleMarker(
+            var circle_marker_9a0533fadd629bc32ba1e24acd6309f3 = L.circleMarker(
                 [40.7072, -74.0134],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_5170955519cb91163894564d48a9bbcc = L.circleMarker(
+            var circle_marker_4e3a383002434d75bbd45af33b1d11ba = L.circleMarker(
                 [40.6857, -73.9982],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_158dc08015d4eedf6792bc211c564ef4 = L.circleMarker(
+            var circle_marker_50d50d214a1f324a7c0ba64f8966cd67 = L.circleMarker(
                 [40.74, -73.951],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7ae84cfd21ed1cb9c7f1b357ede1c5eb = L.circleMarker(
+            var circle_marker_639eebdaec6a9e6237a8fba7afd1f66c = L.circleMarker(
                 [40.7086, -73.9571],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7c9364b259a7f21dc2b0fa0f7dce7411 = L.circleMarker(
+            var circle_marker_29077e59d7318cfc01cb9f7f1c022a68 = L.circleMarker(
                 [40.671, -73.944],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d48dde2af58f2dc84363d9557d228529 = L.circleMarker(
+            var circle_marker_70fe9a2d001e6979f93fd63b6cbab748 = L.circleMarker(
                 [40.6602, -73.976],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7a555c31de73a681bd4f5093bd72f750 = L.circleMarker(
+            var circle_marker_31e482bbc56a59bce240284d0a2669e8 = L.circleMarker(
                 [40.6699, -73.8046],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_3bcab3f7939e2d78881cfe0e66cbd865 = L.circleMarker(
+            var circle_marker_0e73caf345c5edd5b0893e8612233e8e = L.circleMarker(
                 [40.7615, -73.8784],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_83b8c2fb07fd6f6a8f75609a07d55e88 = L.circleMarker(
+            var circle_marker_0277e767d6ae22486a2d2d47db207471 = L.circleMarker(
                 [40.7102, -73.9617],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6530be16c2fed048143dbb243788b252 = L.circleMarker(
+            var circle_marker_d0964da15352a6aac7a981759a789e9b = L.circleMarker(
                 [40.6761, -73.9189],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_4f0d761aabd94d1de7d23719051128f8 = L.circleMarker(
+            var circle_marker_7716e0dce85bfda22a776c56ca9bd076 = L.circleMarker(
                 [40.6851, -73.9586],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fde46de5c120e444f589e0a3421423ec = L.circleMarker(
+            var circle_marker_b630403bf1c895531ac9ebab024e3f3c = L.circleMarker(
                 [40.8084, -73.9143],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_8f52fccd2c36170f01871a9c7f567a47 = L.circleMarker(
+            var circle_marker_24b2a8142e4f6896fe6884455fb58ffa = L.circleMarker(
                 [40.6699, -73.871],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d69e7ff872ef8907929cd8d44cc68d13 = L.circleMarker(
+            var circle_marker_82a4fdf5a3b901d753d5296debbfbde5 = L.circleMarker(
                 [40.6432, -73.9774],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c780a967c9ce5403af6101fd3f5c34d9 = L.circleMarker(
+            var circle_marker_5e324c07bf54761bf79871bc171130b0 = L.circleMarker(
                 [40.7012, -73.9073],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_632531300a60bc437018cf5f9f716e09 = L.circleMarker(
+            var circle_marker_0b66c9b1830baa92786e8d95762383c1 = L.circleMarker(
                 [40.6844, -73.996],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_92a1df5afe9ff994db0a673e935c0889 = L.circleMarker(
+            var circle_marker_bf8a964fffc96a68cf4f67afd78aebc0 = L.circleMarker(
                 [40.8235, -73.9045],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6c4c4c7595608b65c750907d802eae96 = L.circleMarker(
+            var circle_marker_ae3727f73fd9f6e11a7245edc4e0b6ef = L.circleMarker(
                 [40.8794, -73.8681],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_04ea758f0dfe1f4b273f33725f420be9 = L.circleMarker(
+            var circle_marker_1c2071121127909eaeed513ce3b8ead2 = L.circleMarker(
                 [40.6752, -73.8261],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_abc006e6ad1c34fe579bf6b31f53575d = L.circleMarker(
+            var circle_marker_86731f6d2f9b735fee813ee04b59d543 = L.circleMarker(
                 [40.6747, -73.8877],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_99e75ebb10b615775e3b4c3f6bf13342 = L.circleMarker(
+            var circle_marker_6307dc00188cb4b98fa13dba949de14d = L.circleMarker(
                 [40.8401, -73.8694],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c45fd7a3700b7691fa60f41eba1eb445 = L.circleMarker(
+            var circle_marker_1f1bec4232c6d32f73756b7d7db18e2e = L.circleMarker(
                 [40.847, -73.924],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_74c043dd060fe7b489a5b217d1f45ca7 = L.circleMarker(
+            var circle_marker_f348ef2f671b5dca7e2efcbaa3e0ecb7 = L.circleMarker(
                 [40.675, -73.989],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2a9ef5ad840afc03a7c913d8d891487f = L.circleMarker(
+            var circle_marker_e79c5bff46e3ebe0601a73a4a40cfea9 = L.circleMarker(
                 [40.858, -73.8267],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_5e43d4d7f7cf7ca88d3c6cd69b44e727 = L.circleMarker(
+            var circle_marker_a839a4c39e33bd1f67564a6da8a89e42 = L.circleMarker(
                 [40.8499, -73.9072],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_4bc26798507ad53fc883ebbad7ab6f84 = L.circleMarker(
+            var circle_marker_7a5813bab716cb8fbdac5a6914baf322 = L.circleMarker(
                 [40.7445, -73.9482],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c33f9362b0fea94ba4fc5e1f8dc99d13 = L.circleMarker(
+            var circle_marker_374f41c7d3ae52705156db1ddcbb26ed = L.circleMarker(
                 [40.728, -73.7705],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7ebe9e532d15c43f5d87fd6c9e3420e5 = L.circleMarker(
+            var circle_marker_c24fd42e50ca3b3f716d0f09866423a9 = L.circleMarker(
                 [40.6785, -73.9942],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ec0dc9fa28cc316f4750a9d356ea19e2 = L.circleMarker(
+            var circle_marker_9b981a084618c47a733bdf355621f0ee = L.circleMarker(
                 [40.695, -73.7734],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a0d0840719b086014ab0162bf487f9eb = L.circleMarker(
+            var circle_marker_7638f81724024e195427dbca7b8f8591 = L.circleMarker(
                 [40.7039, -73.9227],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c5d3a5e8c09e2a30dfba781bf8897b74 = L.circleMarker(
+            var circle_marker_d73be41b79b39300aee7f6eb8e48d096 = L.circleMarker(
                 [40.8692, -73.9195],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b645a22b3b3dd7d31ad85c9525113d0d = L.circleMarker(
+            var circle_marker_bf58cfc53dba7677bbde2032859ff4b1 = L.circleMarker(
                 [40.7241, -73.9755],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f4aa799d5240db865b00649c4e6f6a64 = L.circleMarker(
+            var circle_marker_2ebb1543ea7206ed410fe4f72ba69ce4 = L.circleMarker(
                 [40.8614, -73.867],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f7767c446bcaf9727c49d8a6b388433c = L.circleMarker(
+            var circle_marker_a37fe2406d133b2a39fab5724075f70a = L.circleMarker(
                 [40.6695, -73.795],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e95547ca136200db5092cf63e52a6004 = L.circleMarker(
+            var circle_marker_0e3367730c3526c722ad8ad0e6559f51 = L.circleMarker(
                 [40.8766, -73.9025],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ade31ed37b160ea531f3ef6805cf8711 = L.circleMarker(
+            var circle_marker_fabadf222367c666ccab10159d470158 = L.circleMarker(
                 [40.8382, -73.9266],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c9e37d45499718894485db990ecb3ec5 = L.circleMarker(
+            var circle_marker_ee7d0bcf629e52884167e274134ad655 = L.circleMarker(
                 [40.6565, -73.8477],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f30645e10ebecd2b9c7fe20558a12b9f = L.circleMarker(
+            var circle_marker_ee221469110fcada27541685fbe93fda = L.circleMarker(
                 [40.6602, -73.9689],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d4f14146e945134ac0d14dc9381aa137 = L.circleMarker(
+            var circle_marker_47d597850a4dd41d067606970bdd014f = L.circleMarker(
                 [40.6715, -73.7628],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b339ec684815c5ae464fa1bf45ff8e49 = L.circleMarker(
+            var circle_marker_7d75d1c087f233455b65a8105b349026 = L.circleMarker(
                 [40.7363, -73.7498],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_82262ca5e1e0390b840f9b7597792fe9 = L.circleMarker(
+            var circle_marker_24d288063e315c79c49ff1ea6350e758 = L.circleMarker(
                 [40.8287, -73.858],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c0690027ad353b007eefbb1330569abf = L.circleMarker(
+            var circle_marker_dbab37edad25ff2909557c31f82887ce = L.circleMarker(
                 [40.6744, -73.8192],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c653f17c0bd85b264d1f1f65b96eccd2 = L.circleMarker(
+            var circle_marker_9c1fd544c3760c2c662806f0c54ce153 = L.circleMarker(
                 [40.6665, -73.7708],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f238a1b41121ddfceb4bf434e446a44c = L.circleMarker(
+            var circle_marker_1af8130b1348ce62c82d5568f12661bc = L.circleMarker(
                 [40.876, -73.8902],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f5824e728352e4dacb90aa4aec9dbb25 = L.circleMarker(
+            var circle_marker_24deb406ab9f0769d9a3a5e9dc13c73b = L.circleMarker(
                 [40.8374, -73.8591],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_3dc6ddcff52a8739446f7acbbfb138e6 = L.circleMarker(
+            var circle_marker_521bd7de3f9b170036bed6ab90b55f46 = L.circleMarker(
                 [40.6446, -73.8583],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_35c2c9c0cbd87ce3df20d5ba78e3ab90 = L.circleMarker(
+            var circle_marker_69e20fe930d1cf56d3a2fea56130cfd3 = L.circleMarker(
                 [40.7297, -73.9022],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_7304583fcb0f47da9b490302aa82ca17 = L.circleMarker(
+            var circle_marker_cb809bb46c3042c314177a6414aef2f6 = L.circleMarker(
                 [40.7343, -73.888],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_bda065823797c8a7539d21a32e754ae1 = L.circleMarker(
+            var circle_marker_6fb034114f241be6ff6d6cdca833e128 = L.circleMarker(
                 [40.655, -73.9608],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2895335727728c451f89ee9e321cf739 = L.circleMarker(
+            var circle_marker_2d0398cace1af985f6502ef3505da14f = L.circleMarker(
                 [40.7491, -73.8447],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_88265ee941f79e85e3b564fc1a4eb52a = L.circleMarker(
+            var circle_marker_89d95b1013a66b2f2144436179428123 = L.circleMarker(
                 [40.6023, -73.9667],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_73a91c740d55283e575bdcf938535670 = L.circleMarker(
+            var circle_marker_c4c3970d237243061c23736e5df461c2 = L.circleMarker(
                 [40.7423, -73.8608],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b73cccb08a6d447bec77eab3f27d57ee = L.circleMarker(
+            var circle_marker_56709fdfbb4747a80ac45e88bf2e4fb7 = L.circleMarker(
                 [40.6958, -73.8318],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_48378ffd60259f5b6cb19ef13da134ee = L.circleMarker(
+            var circle_marker_99376ec63131def15365b0528471cd27 = L.circleMarker(
                 [40.7762, -73.9822],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_2de4d6a500e8aa04e5f3b15b251619b8 = L.circleMarker(
+            var circle_marker_2e11ef02f8e5c2569ad7b9d3547f94c1 = L.circleMarker(
                 [40.7475, -74.0024],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_706a4e518836f1eda6ebd0c5186e80d0 = L.circleMarker(
+            var circle_marker_6b80c2eaeec694f84a86c270a2720f92 = L.circleMarker(
                 [40.7736, -73.9566],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9d918174f6f0fea65870c80014c77584 = L.circleMarker(
+            var circle_marker_68a8e16a64d4d9fbd470e7c519d3107f = L.circleMarker(
                 [40.759, -73.9442],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6bcfbdde961ccf8348480ff9565f9fa4 = L.circleMarker(
+            var circle_marker_50a8811be36ea56248bdad10572db280 = L.circleMarker(
                 [40.7498, -73.9678],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e0ee8899acc0a8201215207da77d61f8 = L.circleMarker(
+            var circle_marker_ff40143649c0cfc0e02c0e3ff4da154b = L.circleMarker(
                 [40.769, -73.9442],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_8d7d0a51b30005f295b7a923ad03b39b = L.circleMarker(
+            var circle_marker_ae6986c9d9515c7e629216f5683cf5c8 = L.circleMarker(
                 [40.7359, -73.9911],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_4ccf336cf23ff790e2ce2a0eea7f0769 = L.circleMarker(
+            var circle_marker_8b5487f8e5ef6a1dd0f29304de7c050e = L.circleMarker(
                 [40.7486, -73.9739],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_fd48388410ada8fd9f71ede776118ea3 = L.circleMarker(
+            var circle_marker_ae3187ae875dab42db58e8a140a87f2b = L.circleMarker(
                 [40.79, -73.9549],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9d55b478f579c682e5d0e45b395262f1 = L.circleMarker(
+            var circle_marker_7af743150be99cabb4fd7deb304e0df4 = L.circleMarker(
                 [40.683, -73.9896],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e4e7c08e7d0c4d8c048898ec48ea14f1 = L.circleMarker(
+            var circle_marker_78c639ded90039d88d695ebbc3b66e5b = L.circleMarker(
                 [40.7411, -73.9887],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_8f4abb991f39d20a22d020817dacacfd = L.circleMarker(
+            var circle_marker_a93c57702c86412d92295d1ea96d8c13 = L.circleMarker(
                 [40.7369, -73.9876],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_247422e8e7e4e07cea11ee359657b300 = L.circleMarker(
+            var circle_marker_a1e8e34326f60f51991810a0ce8bda95 = L.circleMarker(
                 [40.775, -73.958],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_43a4486f796b59aae41246667b417e9a = L.circleMarker(
+            var circle_marker_42053866a3c1b0425fad00682dc08fb0 = L.circleMarker(
                 [40.684, -73.995],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1dc4fab318d50463dbc58a3ae65c10c7 = L.circleMarker(
+            var circle_marker_600e778efd9cff9c880eb1bb4a57915e = L.circleMarker(
                 [40.812, -73.945],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a1da2340e61e3ac5ea9be6aaa6418844 = L.circleMarker(
+            var circle_marker_19b5f83d41b6aaa37ac83bda778ee2c6 = L.circleMarker(
                 [40.7411, -73.9897],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d4802b291518236a1c100071fd13a11b = L.circleMarker(
+            var circle_marker_0416c6f78d637f3beddad35c04047698 = L.circleMarker(
                 [40.741, -74.0027],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6e4e3bf9e0514f29ed17d40810077b0e = L.circleMarker(
+            var circle_marker_c4569b35fe7544d0ca51876cc973af16 = L.circleMarker(
                 [40.7115, -74.0134],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0f2fb3233ecf795a9270b09bbe48e5bd = L.circleMarker(
+            var circle_marker_b832e2d5d5dbe2072f6173009a281348 = L.circleMarker(
                 [40.7272, -73.981],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_11781089ccb42aa07d9fb6143f2f9476 = L.circleMarker(
+            var circle_marker_ddcf6e585296a0f8ac5a44979a5ebbc6 = L.circleMarker(
                 [40.6629, -73.9896],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c8011995fd35d7f5a9a9e1d422df4253 = L.circleMarker(
+            var circle_marker_514fa92692f8f04130d0d5fa93b16c4c = L.circleMarker(
                 [40.758, -73.9855],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e4285d29d975e7ebf300ac019248e570 = L.circleMarker(
+            var circle_marker_1bf4b56f3fef229dd8ed5e4d35f8c189 = L.circleMarker(
                 [40.7736, -73.9832],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f112701b0c27f24773a42d7124e8029f = L.circleMarker(
+            var circle_marker_ea57e376819860813e7355dcb1690b30 = L.circleMarker(
                 [40.779, -73.981],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_354f717dc5320cf23cabad806ed1d15c = L.circleMarker(
+            var circle_marker_0262018a8ff61a4e9f0db88d2a18d83b = L.circleMarker(
                 [40.74, -73.883],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_109e1a1ce144d6b1c416328a3d81b9cd = L.circleMarker(
+            var circle_marker_f2129384f2237e125fb163e82d39af78 = L.circleMarker(
                 [40.779, -73.952],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_61b94ff04ae875447f9f1308633b3d2a = L.circleMarker(
+            var circle_marker_f14bd8917fa9272613ab3c2ae74b8571 = L.circleMarker(
                 [40.776, -73.957],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a488c646ac3c5f3b036f95d803ab7721 = L.circleMarker(
+            var circle_marker_3b06569f55001f5966f64233abba6672 = L.circleMarker(
                 [40.748, -73.9845],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9227fca12d67a14d25ede4b918d619e8 = L.circleMarker(
+            var circle_marker_ad0e7d125d1e18d40739054ef620f9d3 = L.circleMarker(
                 [40.742, -73.976],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f56d7abf309189c4657bab706c4e8210 = L.circleMarker(
+            var circle_marker_10cab6040aa4dff43f95bdfd91c86c1b = L.circleMarker(
                 [40.861, -73.933],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_db140d96b44c72ae0276059c44c8abc3 = L.circleMarker(
+            var circle_marker_257cf37e63ca9937986817fa38dd3b70 = L.circleMarker(
                 [40.791, -73.944],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9446b0fcf04ae2935f7722114f4534a6 = L.circleMarker(
+            var circle_marker_167a091e0ec236b1b4431fa20dcd66d5 = L.circleMarker(
                 [40.8116, -73.9465],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1cb04b0d3be6c603938d5e9727cb2e4b = L.circleMarker(
+            var circle_marker_edc9cd2e676e46c15ec93b05c9584a45 = L.circleMarker(
                 [40.7074, -74.0113],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d7a4403ed69567af7e722c8cb1667457 = L.circleMarker(
+            var circle_marker_e90aabc6933bf3f0b3d11e74ccb9dec1 = L.circleMarker(
                 [40.817, -73.922],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f281b33a5dae375898ca523d086f9e62 = L.circleMarker(
+            var circle_marker_25a98b6a5b9edbac857debd18e8f8a07 = L.circleMarker(
                 [40.7336, -74.0027],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_a3dbff77a986109a8e12fd0d3caa97bc = L.circleMarker(
+            var circle_marker_0b844c7ea71e391a914de7b0f359daae = L.circleMarker(
                 [40.744, -74.001],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9e3d24fca61587524c5f8600c3020058 = L.circleMarker(
+            var circle_marker_b75125185fd7d44d9cff550de1885509 = L.circleMarker(
                 [40.736, -73.981],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_51e1e3dc22cb667f9fdf983c6e13b064 = L.circleMarker(
+            var circle_marker_1e917c14e1bdc166a261fe131d06390e = L.circleMarker(
                 [40.73, -73.957],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b991109ad5d83027397e2181c334744d = L.circleMarker(
+            var circle_marker_6c24164065294370699bd5ac6f40d9b8 = L.circleMarker(
                 [40.742, -73.992],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_694453dca06810314bb4257883ccf90f = L.circleMarker(
+            var circle_marker_b187f2287a53ed452da5a1595d7d151e = L.circleMarker(
                 [40.748, -73.967],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_9e73748404513aeccb81f464e61f07c8 = L.circleMarker(
+            var circle_marker_95fea85e92459de7b6e779ca318dda8a = L.circleMarker(
                 [40.735, -74.007],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_66c8b8d93106e4cbf6af16915b730f1a = L.circleMarker(
+            var circle_marker_8e33aa0b941ecce2005f009bf2c89a0b = L.circleMarker(
                 [40.703, -74.017],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0f812cd1591df0dfd8243a794966ae70 = L.circleMarker(
+            var circle_marker_fc3d0bf255745d886a05c2fd26972a82 = L.circleMarker(
                 [40.723, -73.983],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_44a278512150918b375bfd14bfebad8d = L.circleMarker(
+            var circle_marker_5d71862ca26fff1d4d523c76b4e71d56 = L.circleMarker(
                 [40.779, -73.952],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_ff01b1dfa8f4fb3b5666b973a669a183 = L.circleMarker(
+            var circle_marker_837f9f9cd7a269d1780b865bd64582d8 = L.circleMarker(
                 [40.718, -73.984],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_37c197156b94b9f645aedec4e282e9d0 = L.circleMarker(
+            var circle_marker_c2993ff140d65a966e3b2c6d48710f92 = L.circleMarker(
                 [40.713, -73.987],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_bdd5be3d050f228c6b1a056d8e63c2dc = L.circleMarker(
+            var circle_marker_b880f5b63d8c731e3bdf725b5d2ade15 = L.circleMarker(
                 [40.682, -73.957],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e55d5204044534cbd4ef1b49a9e2de05 = L.circleMarker(
+            var circle_marker_8e6b673083a79c8bac43e80e23fade86 = L.circleMarker(
                 [40.708, -73.957],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_b521159f02fd36d92c992aee7b9c59ad = L.circleMarker(
+            var circle_marker_253c660027a0b687c0e4f822bb3de0b6 = L.circleMarker(
                 [40.75, -73.993],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_05f651e267ff6aa4173717ef4e7194c6 = L.circleMarker(
+            var circle_marker_1d6f6ee1b6cffb5027993bb247142575 = L.circleMarker(
                 [40.7736, -73.9832],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_d150db5e23f4874778b4d027cdbaba3a = L.circleMarker(
+            var circle_marker_b3c380298a3deee8c2d9434ddf945500 = L.circleMarker(
                 [40.744, -73.948],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_cfb425bfe677e9a5a25319a64f144402 = L.circleMarker(
+            var circle_marker_d48156791a1a7a48e7da1c5f6b492800 = L.circleMarker(
                 [40.785, -73.968],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_cc4fe522b9f4a6a7e3d46a44b0eb4f3d = L.circleMarker(
+            var circle_marker_ed0ffccad37c81a7b9a6867104847f5f = L.circleMarker(
                 [40.705, -74.008],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1778d55662d9df1698124b8fd9c1e424 = L.circleMarker(
+            var circle_marker_d511b74b72a803769a7761d23178f307 = L.circleMarker(
                 [40.712, -73.914],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_3191fb0146f4b257f6b147c32e93b7e1 = L.circleMarker(
+            var circle_marker_21c59d77b75916444b7ba8b006292a2d = L.circleMarker(
                 [40.732, -73.81],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_332f1c8bf7c3fcf6437f6b039d117271 = L.circleMarker(
+            var circle_marker_2a61e84e6b5ff08dfd9627c2f16c63ff = L.circleMarker(
                 [40.645, -74.016],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_355138ee2aff16640afd292872ba9868 = L.circleMarker(
+            var circle_marker_92982ac4a99c1136505223feb9235649 = L.circleMarker(
                 [40.602, -73.997],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_509f799856c4d987b326442906a1e12a = L.circleMarker(
+            var circle_marker_d92c5840e7849e80d8c00137a91c8cc2 = L.circleMarker(
                 [40.774, -73.952],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_870594d9300591247e06d58ea2d983b4 = L.circleMarker(
+            var circle_marker_71af5d64733c681efaa9ce0e9c9feb19 = L.circleMarker(
                 [40.758, -73.883],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_75fc3a391d0b646a89bacbfef9d926af = L.circleMarker(
+            var circle_marker_dc9ef2839b7ed7ffb1d3e4c3c29d20b3 = L.circleMarker(
                 [40.718, -74.008],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_6b0fcc1ad5811acc782ae7d899139a99 = L.circleMarker(
+            var circle_marker_19ca096d9dd39a6310a5f80898e6a33c = L.circleMarker(
                 [40.74, -73.99],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_c568c1f2bf2e6af453a971af476dde4f = L.circleMarker(
+            var circle_marker_d059640f3513cc0b9932434ddfacfaba = L.circleMarker(
                 [40.74, -74.005],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0783d7c0de854b06c1b4393107c63b09 = L.circleMarker(
+            var circle_marker_dccb88267b162544a363e6284274a129 = L.circleMarker(
                 [40.85, -73.94],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_1585dc9376d775988a470acace6a4ee0 = L.circleMarker(
+            var circle_marker_db11e9885348188a46202b8b56449d65 = L.circleMarker(
                 [40.71, -73.95],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_894284b604ec2af3ccb98f441fc5bf11 = L.circleMarker(
+            var circle_marker_cddb7c98b7e5f49bb30860deb903edb2 = L.circleMarker(
                 [40.65, -73.915],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_e2fc691f06a8d1ab413397962b0bdeb1 = L.circleMarker(
+            var circle_marker_149db3fdcc081bf070d587b344f4b4b8 = L.circleMarker(
                 [40.66, -73.976],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_0e2ccfe2b0066eef37561ea63e77f259 = L.circleMarker(
+            var circle_marker_1081fcc9b5fe59a2cfb96e6413e2d849 = L.circleMarker(
                 [40.678, -73.923],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_f795e8b0c7799057c5dd42ff1f0b5ff4 = L.circleMarker(
+            var circle_marker_435bc15378f2d7125128c97aca1203a6 = L.circleMarker(
                 [40.74, -73.883],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
     
-            var circle_marker_08ca6d1974585cddcd49143efe79f737 = L.circleMarker(
+            var circle_marker_295ea731a17ae6488a07af9faa141ee4 = L.circleMarker(
                 [40.744, -73.948],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.6, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
-            ).addTo(map_e0b76c15835ab5fe48d814c71c22869c);
+            ).addTo(map_b45c3a9b0ad7675e6e04a880f0c81d26);
         
 &lt;/script&gt;
 &lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
@@ -2745,7 +2746,7 @@ Name: Duration, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\PC\AppData\Local\Temp\ipykernel_15604\3245737099.py:10: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\PC\AppData\Local\Temp\ipykernel_13404\3245737099.py:10: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   race_count_by_range = taxi_df.groupby(&#39;Duration_range&#39;)[&#39;Duration&#39;].count()
 </pre></div>
 </div>
@@ -2790,6 +2791,9 @@ Name: Duration, dtype: int64
 <img alt="_images/99839037286203e0516e434fd30edfe40758a65a98b8acc3957bcbd43786e1ca.png" src="_images/99839037286203e0516e434fd30edfe40758a65a98b8acc3957bcbd43786e1ca.png" />
 </div>
 </div>
+</section>
+<section id="inspeccion-de-datos-faltantes-y-nulos">
+<h3>Inspección de datos faltantes y nulos<a class="headerlink" href="#inspeccion-de-datos-faltantes-y-nulos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for NaN values in the DataFrame</span>
@@ -2979,6 +2983,7 @@ with your book. For more information about this, see <a class="reference externa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-y-visualizacion-de-los-datos">Carga y visualización de los datos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#georreferenciacion-de-las-zonas-de-inicio-y-finalizacion-de-la-carrera">Georreferenciación de las zonas de inicio y finalización de la carrera</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspeccion-de-datos-faltantes-y-nulos">Inspección de datos faltantes y nulos</a></li>
 </ul>
 </li>
 </ul>
