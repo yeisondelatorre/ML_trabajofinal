@@ -30,6 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
+import matplotlib.pyplot as plt
+
 # Visualizar los clusters (usando 'viridis')
 plt.figure(figsize=(10, 8))
 plt.scatter(taxi_df_filtered['total_amount'], taxi_df_filtered['Distance'], c=taxi_df_filtered['Cluster'], cmap='viridis')
