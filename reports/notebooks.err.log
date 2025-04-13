@@ -27,7 +27,7 @@ taxi_df_sample['DBSCAN_Cluster'] = dbscan.fit_predict(taxi_df_sample_scaled)
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[50], line 3[0m
+Cell [1;32mIn[51], line 3[0m
 [0;32m      1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcluster[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m DBSCAN
 [0;32m      2[0m [38;5;66;03m# Estandarizar la muestra[39;00m
 [1;32m----> 3[0m taxi_df_sample_scaled [38;5;241m=[39m [43mscaler[49m[38;5;241m.[39mfit_transform(taxi_df_sample[columns_to_use])
