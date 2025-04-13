@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from sklearn.cluster import KMeans', 'from sklearn.metrics import silhouette_score', '', '# Entrenamos el modelo KMeans con un número de clusters (por ejemplo, 5)', 'kmeans = KMeans(n_clusters=5, random_state=42)']
+['from sklearn.cluster import KMeans', 'from sklearn.metrics import silhouette_score', 'from sklearn.decomposition import PCA', 'import matplotlib.pyplot as plt', '']
 ...
-['', '# Calculamos el silhouette score', 'score = silhouette_score(X_sample, labels)', '', 'print(f"Silhouette Score: {score:.4f}")']
+['labels_5 = kmeans_5.labels_', '', '# Calcular Silhouette Score', 'score_5 = silhouette_score(X_sample, labels_5)', 'print(f"Silhouette Score (5 clusters): {score_5:.4f}")']
 -------------------
 
