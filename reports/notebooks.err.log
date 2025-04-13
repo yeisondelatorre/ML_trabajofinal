@@ -30,15 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-import matplotlib.pyplot as plt
-
-# Visualizar los clusters (usando 'viridis')
-plt.figure(figsize=(10, 8))
-plt.scatter(taxi_df_filtered['total_amount'], taxi_df_filtered['Distance'], c=taxi_df_filtered['Cluster'], cmap='viridis')
-plt.title('Clusters de KMeans')
-plt.xlabel('Total Amount')
-plt.ylabel('Distance')
-plt.colorbar(label='Cluster')
-plt.show()
+['from sklearn.cluster import KMeans', 'from sklearn.metrics import silhouette_score', '', '# Entrenamos el modelo KMeans con un número de clusters (por ejemplo, 5)', 'kmeans = KMeans(n_clusters=5, random_state=42)']
+...
+['', '# Calculamos el silhouette score', 'score = silhouette_score(X_sample, labels)', '', 'print(f"Silhouette Score: {score:.4f}")']
 -------------------
 
