@@ -26,12 +26,12 @@ Traceback (most recent call last):
     error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
   File "C:\Users\PC\miniconda3\envs\ml_venv\lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
     raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 600 seconds.
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from sklearn.model_selection import GridSearchCV', 'from sklearn.cluster import KMeans', 'from sklearn.metrics import silhouette_score', 'import numpy as np', 'import pandas as pd']
+['from sklearn.cluster import KMeans', 'from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score', '', '# Crear el modelo con los mejores parámetros encontrados por MSE', "kmeans_davies = KMeans(n_clusters=2, init='k-means++', max_iter=300, random_state=42)"]
 ...
-["results_df_sorted = results_df.sort_values(by='mean_test_score', ascending=False)", '', '# Mostrar todo', "pd.set_option('display.max_rows', None)  # Mostrar todas las filas", 'print(results_df_sorted)']
+['', '# Imprimir resultados', 'print(f"Silhouette Score (MSE): {silhouette_mse:.4f}")', 'print(f"Davies-Bouldin Score (MSE): {davies_bouldin_mse:.4f}")', 'print(f"Calinski-Harabasz Score (MSE): {calinski_harabasz_mse:.4f}")']
 -------------------
 
