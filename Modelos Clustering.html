@@ -180,7 +180,13 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">NYC Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html"><strong>ETL - EDA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modelaci%C3%B3n%20clustering.html"><strong>Modelación clustering</strong></a></li>
+
+
+
+
+
 </ul>
 
     </div>
@@ -690,68 +696,68 @@ See the YAML at the top of this page for example.</p></li>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comenzando la búsqueda de hiperparámetros...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.10 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.09 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.08 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.05 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.08 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.22 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.30 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.34 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.22 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.30 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.32 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.28 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.32 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
 
 Todos los resultados de la búsqueda:
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.10 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.09 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.08 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.05 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.08 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.22 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.30 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.34 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.22 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.30 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.32 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.28 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.32 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
 
 Mejores parámetros:  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}
 </pre></div>
@@ -2512,6 +2518,1118 @@ Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3159, Tiempo total: 73.43 segundos
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  57%|█████▋    | 46/81 [2:26:48&lt;4:11:29, 431.13s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.5665, Tiempo total: 302.23 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  58%|█████▊    | 47/81 [2:40:28&lt;5:10:26, 547.83s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.5343, Tiempo total: 273.36 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  59%|█████▉    | 48/81 [2:44:08&lt;4:07:17, 449.62s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.4822, Tiempo total: 73.48 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  60%|██████    | 49/81 [2:47:47&lt;3:22:51, 380.36s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.4269, Tiempo total: 72.90 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  62%|██████▏   | 50/81 [2:51:27&lt;2:51:42, 332.35s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.3884, Tiempo total: 73.44 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  63%|██████▎   | 51/81 [2:55:01&lt;2:28:22, 296.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.3851, Tiempo total: 71.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  64%|██████▍   | 52/81 [2:58:33&lt;2:11:12, 271.47s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.3490, Tiempo total: 70.82 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  65%|██████▌   | 53/81 [3:02:06&lt;1:58:26, 253.79s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.3512, Tiempo total: 70.84 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  67%|██████▋   | 54/81 [3:05:40&lt;1:48:52, 241.96s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3626, Tiempo total: 71.45 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  68%|██████▊   | 55/81 [3:09:29&lt;1:43:06, 237.93s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.6059, Tiempo total: 76.17 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  69%|██████▉   | 56/81 [3:13:17&lt;1:37:53, 234.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.5795, Tiempo total: 75.99 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  70%|███████   | 57/81 [3:17:03&lt;1:32:58, 232.46s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.5278, Tiempo total: 75.54 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  72%|███████▏  | 58/81 [3:20:51&lt;1:28:31, 230.92s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.4971, Tiempo total: 75.77 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  73%|███████▎  | 59/81 [3:24:36&lt;1:24:05, 229.34s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.4403, Tiempo total: 75.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  74%|███████▍  | 60/81 [3:28:23&lt;1:19:58, 228.49s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.4119, Tiempo total: 75.49 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  75%|███████▌  | 61/81 [3:32:11&lt;1:16:04, 228.21s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.3977, Tiempo total: 75.85 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  77%|███████▋  | 62/81 [3:35:56&lt;1:11:59, 227.34s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.3948, Tiempo total: 75.09 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  78%|███████▊  | 63/81 [3:39:40&lt;1:07:53, 226.29s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3800, Tiempo total: 74.61 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  79%|███████▉  | 64/81 [3:43:39&lt;1:05:12, 230.12s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.6427, Tiempo total: 79.68 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  80%|████████  | 65/81 [3:47:31&lt;1:01:31, 230.70s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.6107, Tiempo total: 77.34 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  81%|████████▏ | 66/81 [3:51:21&lt;57:37, 230.50s/it]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.5567, Tiempo total: 76.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  83%|████████▎ | 67/81 [3:55:12&lt;53:49, 230.70s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.5291, Tiempo total: 77.05 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  84%|████████▍ | 68/81 [3:59:04&lt;50:05, 231.19s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.4948, Tiempo total: 77.43 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  85%|████████▌ | 69/81 [4:02:55&lt;46:14, 231.18s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.4391, Tiempo total: 77.06 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  86%|████████▋ | 70/81 [4:06:46&lt;42:20, 230.91s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.4441, Tiempo total: 76.76 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  88%|████████▊ | 71/81 [4:10:39&lt;38:35, 231.55s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.4200, Tiempo total: 77.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  89%|████████▉ | 72/81 [4:14:31&lt;34:45, 231.67s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.4134, Tiempo total: 77.32 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  90%|█████████ | 73/81 [4:20:52&lt;36:52, 276.52s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.7004, Tiempo total: 127.03 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  91%|█████████▏| 74/81 [4:27:17&lt;36:04, 309.15s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.7760, Tiempo total: 128.39 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  93%|█████████▎| 75/81 [4:33:44&lt;33:14, 332.48s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.7225, Tiempo total: 128.95 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  94%|█████████▍| 76/81 [4:40:16&lt;29:11, 350.32s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.6769, Tiempo total: 130.61 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  95%|█████████▌| 77/81 [4:46:40&lt;24:01, 360.47s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.6501, Tiempo total: 128.02 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  96%|█████████▋| 78/81 [4:53:08&lt;18:25, 368.55s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.6036, Tiempo total: 129.10 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  98%|█████████▊| 79/81 [4:59:32&lt;12:26, 373.44s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.6030, Tiempo total: 128.25 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  99%|█████████▉| 80/81 [5:05:59&lt;06:17, 377.37s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.6648, Tiempo total: 128.81 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando: 100%|██████████| 81/81 [5:12:27&lt;00:00, 231.45s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.6701, Tiempo total: 129.25 segundos
+
+ Resultados de la búsqueda:
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.2574, Tiempo: 26.39 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.1944, Tiempo: 26.16 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.1763, Tiempo: 26.05 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.1101, Tiempo: 25.97 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.0603, Tiempo: 27.28 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.1028, Tiempo: 28.86 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.0640, Tiempo: 27.07 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.0517, Tiempo: 27.61 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.0581, Tiempo: 27.24 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.2918, Tiempo: 42.76 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.2301, Tiempo: 42.45 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.2009, Tiempo: 42.30 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.1454, Tiempo: 42.51 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.0872, Tiempo: 42.23 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.0622, Tiempo: 41.83 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.0653, Tiempo: 42.51 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.0575, Tiempo: 43.33 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.0259, Tiempo: 42.06 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.3937, Tiempo: 52.35 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.3411, Tiempo: 52.31 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.2807, Tiempo: 53.09 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.2522, Tiempo: 53.01 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.2379, Tiempo: 54.09 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.2206, Tiempo: 64.01 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.1721, Tiempo: 65.83 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.1463, Tiempo: 69.61 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.1150, Tiempo: 78.98 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.4852, Tiempo: 94.55 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.4055, Tiempo: 92.59 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.3555, Tiempo: 85.44 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.3217, Tiempo: 84.61 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.2822, Tiempo: 85.31 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.2959, Tiempo: 85.92 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.2801, Tiempo: 85.29 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.2647, Tiempo: 69.17 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.2399, Tiempo: 79.83 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.5286, Tiempo: 70.45 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.4759, Tiempo: 86.08 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.4334, Tiempo: 67.86 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.3827, Tiempo: 74.33 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.3712, Tiempo: 105.20 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.3135, Tiempo: 90.82 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.3155, Tiempo: 66.27 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.3227, Tiempo: 68.31 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3159, Tiempo: 73.43 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.5665, Tiempo: 302.23 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.5343, Tiempo: 273.36 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.4822, Tiempo: 73.48 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.4269, Tiempo: 72.90 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.3884, Tiempo: 73.44 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.3851, Tiempo: 71.21 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.3490, Tiempo: 70.82 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.3512, Tiempo: 70.84 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3626, Tiempo: 71.45 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.6059, Tiempo: 76.17 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.5795, Tiempo: 75.99 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.5278, Tiempo: 75.54 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.4971, Tiempo: 75.77 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.4403, Tiempo: 75.21 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.4119, Tiempo: 75.49 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.3977, Tiempo: 75.85 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.3948, Tiempo: 75.09 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.3800, Tiempo: 74.61 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.6427, Tiempo: 79.68 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.6107, Tiempo: 77.34 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.5567, Tiempo: 76.67 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.5291, Tiempo: 77.05 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.4948, Tiempo: 77.43 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.4391, Tiempo: 77.06 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.4441, Tiempo: 76.76 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.4200, Tiempo: 77.67 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.4134, Tiempo: 77.32 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, DB Score Promedio: 1.7004, Tiempo: 127.03 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, DB Score Promedio: 1.7760, Tiempo: 128.39 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, DB Score Promedio: 1.7225, Tiempo: 128.95 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, DB Score Promedio: 1.6769, Tiempo: 130.61 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, DB Score Promedio: 1.6501, Tiempo: 128.02 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, DB Score Promedio: 1.6036, Tiempo: 129.10 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, DB Score Promedio: 1.6030, Tiempo: 128.25 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, DB Score Promedio: 1.6648, Tiempo: 128.81 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, DB Score Promedio: 1.6701, Tiempo: 129.25 s
+
+ Mejores parámetros encontrados para DBSCAN:
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}
+Mejor Davies-Bouldin Score: 1.0259
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span><span class="p">,</span> <span class="n">davies_bouldin_score</span><span class="p">,</span> <span class="n">calinski_harabasz_score</span>
+
+<span class="c1"># Definir los mejores parámetros encontrados previamente</span>
+<span class="n">best_params_dbscan</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="s1">&#39;min_samples&#39;</span><span class="p">:</span> <span class="mi">45</span>
+<span class="p">}</span>
+
+<span class="c1"># Crear el modelo con los mejores parámetros</span>
+<span class="n">dbscan_davies</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="o">**</span><span class="n">best_params_dbscan</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el modelo al conjunto de datos</span>
+<span class="n">labels_dbscan_davies</span> <span class="o">=</span> <span class="n">dbscan_davies</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Contar número de clusters (sin incluir ruido)</span>
+<span class="n">n_clusters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels_dbscan_davies</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">labels_dbscan_davies</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Número de clusters encontrados por DBSCAN: </span><span class="si">{</span><span class="n">n_clusters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcular métricas solo si hay más de 1 cluster</span>
+<span class="k">if</span> <span class="n">n_clusters</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">silhouette</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_davies</span><span class="p">)</span>
+    <span class="n">davies</span> <span class="o">=</span> <span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_davies</span><span class="p">)</span>
+    <span class="n">calinski</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_davies</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Métricas del modelo DBSCAN (optimizadas por Davies-Bouldin):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Silhouette Score: </span><span class="si">{</span><span class="n">silhouette</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Davies-Bouldin Score: </span><span class="si">{</span><span class="n">davies</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calinski-Harabasz Score: </span><span class="si">{</span><span class="n">calinski</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> DBSCAN detectó menos de 2 clusters. No se pueden calcular métricas.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de clusters encontrados por DBSCAN: 27
+
+📊 Métricas del modelo DBSCAN (optimizadas por Davies-Bouldin):
+Silhouette Score: 0.3184
+Davies-Bouldin Score: 1.1676
+Calinski-Harabasz Score: 7957.5621
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Reducir dimensionalidad para visualización</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Graficar con colores según etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">labels_dbscan_davies</span><span class="p">,</span>  <span class="c1"># asegúrate que esto contenga las etiquetas correctas</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;nipy_spectral&#39;</span><span class="p">,</span>    <span class="c1"># puedes cambiar por &#39;tab20&#39;, &#39;tab10&#39;, &#39;hsv&#39;, etc.</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PCA 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PCA 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Clusters visualizados con PCA (DBSCAN - Davies-Bouldin)&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etiqueta de Cluster&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/98b1a4eb9284f84d7ff7bb928eb591bf68a381abe43b9d1d97fc8383488f6195.png" src="_images/98b1a4eb9284f84d7ff7bb928eb591bf68a381abe43b9d1d97fc8383488f6195.png" />
+</div>
+</div>
+<p>CALINSKI</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">calinski_harabasz_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="c1"># Definir el rango de parámetros para DBSCAN</span>
+<span class="n">param_grid_dbscan</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="n">eps</span><span class="p">,</span> <span class="s1">&#39;min_samples&#39;</span><span class="p">:</span> <span class="n">min_samples</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">eps</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">min_samples</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Objeto para dividir los datos en 3 folds</span>
+<span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">results_dbscan_ch</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🔍 Comenzando la búsqueda de hiperparámetros para DBSCAN con Calinski-Harabasz...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">param_grid_dbscan</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Buscando&quot;</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fit_times</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">score_times</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">val_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X_sample</span><span class="p">):</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span> <span class="o">=</span> <span class="n">X_sample</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X_sample</span><span class="p">[</span><span class="n">val_index</span><span class="p">]</span>
+
+        <span class="n">start_fit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">dbscan_temp</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">labels_train</span> <span class="o">=</span> <span class="n">dbscan_temp</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+        <span class="n">fit_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_fit</span><span class="p">)</span>
+
+        <span class="n">start_score</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># CH score no es válido con 1 solo cluster</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels_train</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">labels_val</span> <span class="o">=</span> <span class="n">dbscan_temp</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels_val</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">labels_val</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="n">score_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_score</span><span class="p">)</span>
+
+    <span class="n">mean_ch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+    <span class="n">mean_fit_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">fit_times</span><span class="p">)</span>
+    <span class="n">mean_score_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score_times</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">mean_fit_time</span> <span class="o">+</span> <span class="n">mean_score_time</span>
+
+    <span class="n">results_dbscan_ch</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">params</span><span class="p">,</span> <span class="n">mean_ch</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
+    <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">, CH Score Promedio: </span><span class="si">{</span><span class="n">mean_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Tiempo total: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> segundos&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar todos los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Resultados de la búsqueda:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">params</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">duration</span> <span class="ow">in</span> <span class="n">results_dbscan_ch</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">, CH Score Promedio: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Tiempo: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+
+<span class="c1"># Obtener los mejores parámetros (máximo CH)</span>
+<span class="n">best_result_ch</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">results_dbscan_ch</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">best_params_dbscan_ch</span> <span class="o">=</span> <span class="n">best_result_ch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">best_score_dbscan_ch</span> <span class="o">=</span> <span class="n">best_result_ch</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Mejores parámetros encontrados para DBSCAN (Calinski-Harabasz):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">best_params_dbscan_ch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mejor Calinski-Harabasz Score: </span><span class="si">{</span><span class="n">best_score_dbscan_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔍 Comenzando la búsqueda de hiperparámetros para DBSCAN con Calinski-Harabasz...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   1%|          | 1/81 [01:26&lt;1:55:03, 86.30s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, CH Score Promedio: 687.3525, Tiempo total: 28.75 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   2%|▏         | 2/81 [02:50&lt;1:51:46, 84.89s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, CH Score Promedio: 1424.1599, Tiempo total: 27.96 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   4%|▎         | 3/81 [04:11&lt;1:47:59, 83.07s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, CH Score Promedio: 1938.9900, Tiempo total: 26.96 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   5%|▍         | 4/81 [05:31&lt;1:45:00, 81.82s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, CH Score Promedio: 2174.8832, Tiempo total: 26.62 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   6%|▌         | 5/81 [06:51&lt;1:42:54, 81.24s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, CH Score Promedio: 2368.0556, Tiempo total: 26.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   7%|▋         | 6/81 [08:11&lt;1:41:02, 80.83s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, CH Score Promedio: 2137.2628, Tiempo total: 26.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   9%|▊         | 7/81 [09:31&lt;1:39:26, 80.63s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, CH Score Promedio: 2342.7719, Tiempo total: 26.73 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  10%|▉         | 8/81 [10:51&lt;1:38:00, 80.56s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, CH Score Promedio: 2340.9401, Tiempo total: 26.79 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  11%|█         | 9/81 [12:11&lt;1:36:22, 80.32s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, CH Score Promedio: 2381.0914, Tiempo total: 26.58 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  12%|█▏        | 10/81 [14:20&lt;1:52:43, 95.26s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, CH Score Promedio: 1220.1272, Tiempo total: 42.88 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  14%|█▎        | 11/81 [16:27&lt;2:02:25, 104.94s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, CH Score Promedio: 2045.9629, Tiempo total: 42.29 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  15%|█▍        | 12/81 [18:35&lt;2:08:44, 111.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, CH Score Promedio: 2574.2550, Tiempo total: 42.65 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  16%|█▌        | 13/81 [20:43&lt;2:12:29, 116.91s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, CH Score Promedio: 2738.1482, Tiempo total: 42.77 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  17%|█▋        | 14/81 [22:51&lt;2:14:24, 120.37s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, CH Score Promedio: 3278.9350, Tiempo total: 42.78 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  19%|█▊        | 15/81 [25:00&lt;2:15:14, 122.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, CH Score Promedio: 3536.0696, Tiempo total: 42.97 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  20%|█▉        | 16/81 [27:09&lt;2:14:54, 124.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, CH Score Promedio: 3403.9691, Tiempo total: 42.73 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  21%|██        | 17/81 [29:17&lt;2:14:07, 125.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, CH Score Promedio: 3298.7562, Tiempo total: 42.84 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  22%|██▏       | 18/81 [31:25&lt;2:12:45, 126.44s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, CH Score Promedio: 3345.8062, Tiempo total: 42.68 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  23%|██▎       | 19/81 [34:05&lt;2:21:02, 136.50s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, CH Score Promedio: 1818.9938, Tiempo total: 53.31 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  25%|██▍       | 20/81 [36:45&lt;2:25:50, 143.46s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, CH Score Promedio: 2305.6039, Tiempo total: 53.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  26%|██▌       | 21/81 [39:25&lt;2:28:31, 148.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, CH Score Promedio: 2877.5965, Tiempo total: 53.44 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  27%|██▋       | 22/81 [42:05&lt;2:29:21, 151.89s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, CH Score Promedio: 3036.9036, Tiempo total: 53.24 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  28%|██▊       | 23/81 [44:45&lt;2:29:21, 154.50s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, CH Score Promedio: 3140.8074, Tiempo total: 53.51 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  30%|██▉       | 24/81 [47:25&lt;2:28:13, 156.02s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, CH Score Promedio: 3245.1206, Tiempo total: 53.18 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  31%|███       | 25/81 [50:03&lt;2:26:14, 156.68s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, CH Score Promedio: 3487.8863, Tiempo total: 52.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  32%|███▏      | 26/81 [52:42&lt;2:24:13, 157.34s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, CH Score Promedio: 3628.1965, Tiempo total: 52.95 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  33%|███▎      | 27/81 [55:20&lt;2:21:47, 157.54s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, CH Score Promedio: 3829.7506, Tiempo total: 52.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  35%|███▍      | 28/81 [58:24&lt;2:26:05, 165.38s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, CH Score Promedio: 2154.9650, Tiempo total: 61.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  36%|███▌      | 29/81 [1:01:25&lt;2:27:26, 170.12s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, CH Score Promedio: 2599.5774, Tiempo total: 60.38 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  37%|███▋      | 30/81 [1:04:26&lt;2:27:28, 173.49s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, CH Score Promedio: 2936.0245, Tiempo total: 60.45 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  38%|███▊      | 31/81 [1:07:29&lt;2:26:44, 176.09s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, CH Score Promedio: 3217.0032, Tiempo total: 60.71 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  40%|███▉      | 32/81 [1:10:31&lt;2:25:25, 178.07s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, CH Score Promedio: 3288.0815, Tiempo total: 60.89 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  41%|████      | 33/81 [1:13:33&lt;2:23:25, 179.29s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, CH Score Promedio: 3289.2953, Tiempo total: 60.71 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  42%|████▏     | 34/81 [1:16:37&lt;2:21:35, 180.75s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, CH Score Promedio: 3435.2470, Tiempo total: 61.38 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  43%|████▎     | 35/81 [1:19:44&lt;2:19:57, 182.56s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, CH Score Promedio: 3489.9058, Tiempo total: 62.24 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  44%|████▍     | 36/81 [1:22:49&lt;2:17:22, 183.16s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, CH Score Promedio: 3552.0844, Tiempo total: 61.52 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  46%|████▌     | 37/81 [1:26:57&lt;2:28:33, 202.59s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, CH Score Promedio: 2361.1894, Tiempo total: 82.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  47%|████▋     | 38/81 [1:31:14&lt;2:37:01, 219.11s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, CH Score Promedio: 2803.2024, Tiempo total: 85.88 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  48%|████▊     | 39/81 [1:35:26&lt;2:40:13, 228.90s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, CH Score Promedio: 2890.5959, Tiempo total: 83.91 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  49%|████▉     | 40/81 [1:39:35&lt;2:40:33, 234.97s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, CH Score Promedio: 3271.8108, Tiempo total: 83.03 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  51%|█████     | 41/81 [1:43:48&lt;2:40:06, 240.16s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, CH Score Promedio: 3213.0727, Tiempo total: 84.08 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  52%|█████▏    | 42/81 [1:47:54&lt;2:37:20, 242.05s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, CH Score Promedio: 3559.1737, Tiempo total: 82.15 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  53%|█████▎    | 43/81 [1:52:06&lt;2:35:07, 244.92s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, CH Score Promedio: 3573.9763, Tiempo total: 83.87 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  54%|█████▍    | 44/81 [1:56:13&lt;2:31:34, 245.79s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, CH Score Promedio: 3501.0968, Tiempo total: 82.59 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  56%|█████▌    | 45/81 [2:00:23&lt;2:28:03, 246.77s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, CH Score Promedio: 3562.1630, Tiempo total: 83.01 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  57%|█████▋    | 46/81 [2:04:44&lt;2:26:36, 251.33s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, CH Score Promedio: 2378.3928, Tiempo total: 87.31 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  58%|█████▊    | 47/81 [2:09:10&lt;2:24:54, 255.72s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, CH Score Promedio: 3003.4283, Tiempo total: 88.65 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  59%|█████▉    | 48/81 [2:13:33&lt;2:21:48, 257.85s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, CH Score Promedio: 3015.9227, Tiempo total: 87.60 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  60%|██████    | 49/81 [2:17:55&lt;2:18:09, 259.06s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, CH Score Promedio: 3291.7134, Tiempo total: 87.29 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  62%|██████▏   | 50/81 [2:22:21&lt;2:14:56, 261.18s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, CH Score Promedio: 3572.6401, Tiempo total: 88.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  63%|██████▎   | 51/81 [2:26:46&lt;2:11:04, 262.15s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, CH Score Promedio: 3590.0814, Tiempo total: 88.13 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  64%|██████▍   | 52/81 [2:31:07&lt;2:06:34, 261.87s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, CH Score Promedio: 3672.2801, Tiempo total: 87.06 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  65%|██████▌   | 53/81 [2:35:06&lt;1:58:59, 254.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, CH Score Promedio: 3691.3938, Tiempo total: 79.62 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  67%|██████▋   | 54/81 [2:38:30&lt;1:47:56, 239.85s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, CH Score Promedio: 3531.7146, Tiempo total: 68.18 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  68%|██████▊   | 55/81 [2:42:15&lt;1:41:59, 235.35s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, CH Score Promedio: 2499.0472, Tiempo total: 74.94 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  69%|██████▉   | 56/81 [2:45:53&lt;1:35:49, 229.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, CH Score Promedio: 3150.7933, Tiempo total: 72.47 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  70%|███████   | 57/81 [2:49:30&lt;1:30:31, 226.31s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, CH Score Promedio: 3212.5994, Tiempo total: 72.58 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  72%|███████▏  | 58/81 [2:53:10&lt;1:25:56, 224.22s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, CH Score Promedio: 3201.4132, Tiempo total: 73.10 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  73%|███████▎  | 59/81 [2:56:46&lt;1:21:18, 221.75s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, CH Score Promedio: 3656.3829, Tiempo total: 71.98 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  74%|███████▍  | 60/81 [3:00:26&lt;1:17:26, 221.26s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, CH Score Promedio: 3657.3993, Tiempo total: 73.37 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  75%|███████▌  | 61/81 [3:04:11&lt;1:14:11, 222.58s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, CH Score Promedio: 3669.4552, Tiempo total: 75.22 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  77%|███████▋  | 62/81 [3:08:02&lt;1:11:12, 224.86s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, CH Score Promedio: 3777.0843, Tiempo total: 76.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  78%|███████▊  | 63/81 [3:11:53&lt;1:08:02, 226.81s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, CH Score Promedio: 3764.6035, Tiempo total: 77.12 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  79%|███████▉  | 64/81 [3:15:53&lt;1:05:22, 230.73s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, CH Score Promedio: 2535.2921, Tiempo total: 79.95 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  80%|████████  | 65/81 [3:19:52&lt;1:02:11, 233.24s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, CH Score Promedio: 3214.2637, Tiempo total: 79.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  81%|████████▏ | 66/81 [3:23:51&lt;58:44, 234.95s/it]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, CH Score Promedio: 3325.7378, Tiempo total: 79.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  83%|████████▎ | 67/81 [3:27:55&lt;55:28, 237.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, CH Score Promedio: 3356.6382, Tiempo total: 81.41 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  84%|████████▍ | 68/81 [3:31:53&lt;51:29, 237.64s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, CH Score Promedio: 3573.3457, Tiempo total: 79.13 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  85%|████████▌ | 69/81 [3:35:52&lt;47:38, 238.23s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, CH Score Promedio: 3811.5859, Tiempo total: 79.87 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  86%|████████▋ | 70/81 [3:39:57&lt;44:02, 240.18s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, CH Score Promedio: 3628.9251, Tiempo total: 81.57 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  88%|████████▊ | 71/81 [3:44:02&lt;40:15, 241.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, CH Score Promedio: 3796.4637, Tiempo total: 81.55 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  89%|████████▉ | 72/81 [3:48:04&lt;36:14, 241.65s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, CH Score Promedio: 3819.8131, Tiempo total: 80.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  90%|█████████ | 73/81 [3:54:38&lt;38:20, 287.57s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, CH Score Promedio: 3002.5113, Tiempo total: 131.55 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  91%|█████████▏| 74/81 [4:01:24&lt;37:41, 323.01s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, CH Score Promedio: 3833.1627, Tiempo total: 135.19 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  93%|█████████▎| 75/81 [4:08:01&lt;34:32, 345.35s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, CH Score Promedio: 4076.8049, Tiempo total: 132.45 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  94%|█████████▍| 76/81 [4:14:29&lt;29:49, 357.93s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, CH Score Promedio: 3997.9276, Tiempo total: 129.06 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  95%|█████████▌| 77/81 [4:20:57&lt;24:28, 367.11s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, CH Score Promedio: 4290.7456, Tiempo total: 129.49 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  96%|█████████▋| 78/81 [4:27:32&lt;18:46, 375.37s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, CH Score Promedio: 4455.5229, Tiempo total: 131.50 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  98%|█████████▊| 79/81 [4:34:04&lt;12:40, 380.42s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, CH Score Promedio: 4553.0719, Tiempo total: 130.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  99%|█████████▉| 80/81 [4:40:50&lt;06:27, 388.00s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, CH Score Promedio: 4420.6019, Tiempo total: 135.19 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando: 100%|██████████| 81/81 [4:47:31&lt;00:00, 212.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, CH Score Promedio: 4372.8803, Tiempo total: 133.78 segundos
+
+ Resultados de la búsqueda:
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, CH Score Promedio: 687.3525, Tiempo: 28.75 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, CH Score Promedio: 1424.1599, Tiempo: 27.96 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, CH Score Promedio: 1938.9900, Tiempo: 26.96 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, CH Score Promedio: 2174.8832, Tiempo: 26.62 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, CH Score Promedio: 2368.0556, Tiempo: 26.72 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, CH Score Promedio: 2137.2628, Tiempo: 26.67 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, CH Score Promedio: 2342.7719, Tiempo: 26.73 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, CH Score Promedio: 2340.9401, Tiempo: 26.79 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, CH Score Promedio: 2381.0914, Tiempo: 26.58 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, CH Score Promedio: 1220.1272, Tiempo: 42.88 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, CH Score Promedio: 2045.9629, Tiempo: 42.29 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, CH Score Promedio: 2574.2550, Tiempo: 42.65 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, CH Score Promedio: 2738.1482, Tiempo: 42.77 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, CH Score Promedio: 3278.9350, Tiempo: 42.78 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, CH Score Promedio: 3536.0696, Tiempo: 42.97 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, CH Score Promedio: 3403.9691, Tiempo: 42.73 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, CH Score Promedio: 3298.7562, Tiempo: 42.84 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, CH Score Promedio: 3345.8062, Tiempo: 42.68 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, CH Score Promedio: 1818.9938, Tiempo: 53.31 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, CH Score Promedio: 2305.6039, Tiempo: 53.21 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, CH Score Promedio: 2877.5965, Tiempo: 53.44 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, CH Score Promedio: 3036.9036, Tiempo: 53.24 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, CH Score Promedio: 3140.8074, Tiempo: 53.51 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, CH Score Promedio: 3245.1206, Tiempo: 53.18 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, CH Score Promedio: 3487.8863, Tiempo: 52.72 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, CH Score Promedio: 3628.1965, Tiempo: 52.95 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, CH Score Promedio: 3829.7506, Tiempo: 52.67 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, CH Score Promedio: 2154.9650, Tiempo: 61.21 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, CH Score Promedio: 2599.5774, Tiempo: 60.38 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, CH Score Promedio: 2936.0245, Tiempo: 60.45 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, CH Score Promedio: 3217.0032, Tiempo: 60.71 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, CH Score Promedio: 3288.0815, Tiempo: 60.89 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, CH Score Promedio: 3289.2953, Tiempo: 60.71 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, CH Score Promedio: 3435.2470, Tiempo: 61.38 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, CH Score Promedio: 3489.9058, Tiempo: 62.24 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, CH Score Promedio: 3552.0844, Tiempo: 61.52 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, CH Score Promedio: 2361.1894, Tiempo: 82.63 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, CH Score Promedio: 2803.2024, Tiempo: 85.88 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, CH Score Promedio: 2890.5959, Tiempo: 83.91 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, CH Score Promedio: 3271.8108, Tiempo: 83.03 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, CH Score Promedio: 3213.0727, Tiempo: 84.08 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, CH Score Promedio: 3559.1737, Tiempo: 82.15 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, CH Score Promedio: 3573.9763, Tiempo: 83.87 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, CH Score Promedio: 3501.0968, Tiempo: 82.59 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, CH Score Promedio: 3562.1630, Tiempo: 83.01 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, CH Score Promedio: 2378.3928, Tiempo: 87.31 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, CH Score Promedio: 3003.4283, Tiempo: 88.65 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, CH Score Promedio: 3015.9227, Tiempo: 87.60 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, CH Score Promedio: 3291.7134, Tiempo: 87.29 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, CH Score Promedio: 3572.6401, Tiempo: 88.69 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, CH Score Promedio: 3590.0814, Tiempo: 88.13 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, CH Score Promedio: 3672.2801, Tiempo: 87.06 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, CH Score Promedio: 3691.3938, Tiempo: 79.62 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, CH Score Promedio: 3531.7146, Tiempo: 68.18 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, CH Score Promedio: 2499.0472, Tiempo: 74.94 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, CH Score Promedio: 3150.7933, Tiempo: 72.47 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, CH Score Promedio: 3212.5994, Tiempo: 72.58 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, CH Score Promedio: 3201.4132, Tiempo: 73.10 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, CH Score Promedio: 3656.3829, Tiempo: 71.98 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, CH Score Promedio: 3657.3993, Tiempo: 73.37 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, CH Score Promedio: 3669.4552, Tiempo: 75.22 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, CH Score Promedio: 3777.0843, Tiempo: 76.72 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, CH Score Promedio: 3764.6035, Tiempo: 77.12 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, CH Score Promedio: 2535.2921, Tiempo: 79.95 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, CH Score Promedio: 3214.2637, Tiempo: 79.69 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, CH Score Promedio: 3325.7378, Tiempo: 79.63 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, CH Score Promedio: 3356.6382, Tiempo: 81.41 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, CH Score Promedio: 3573.3457, Tiempo: 79.13 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, CH Score Promedio: 3811.5859, Tiempo: 79.87 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, CH Score Promedio: 3628.9251, Tiempo: 81.57 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, CH Score Promedio: 3796.4637, Tiempo: 81.55 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, CH Score Promedio: 3819.8131, Tiempo: 80.63 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, CH Score Promedio: 3002.5113, Tiempo: 131.55 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, CH Score Promedio: 3833.1627, Tiempo: 135.19 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, CH Score Promedio: 4076.8049, Tiempo: 132.45 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, CH Score Promedio: 3997.9276, Tiempo: 129.06 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, CH Score Promedio: 4290.7456, Tiempo: 129.49 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, CH Score Promedio: 4455.5229, Tiempo: 131.50 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, CH Score Promedio: 4553.0719, Tiempo: 130.69 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, CH Score Promedio: 4420.6019, Tiempo: 135.19 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, CH Score Promedio: 4372.8803, Tiempo: 133.78 s
+
+ Mejores parámetros encontrados para DBSCAN (Calinski-Harabasz):
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}
+Mejor Calinski-Harabasz Score: 4553.0719
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span><span class="p">,</span> <span class="n">davies_bouldin_score</span><span class="p">,</span> <span class="n">calinski_harabasz_score</span>
+
+<span class="c1"># Definir los mejores parámetros encontrados previamente por Calinski-Harabasz</span>
+<span class="n">best_params_dbscan_ch</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+    <span class="s1">&#39;min_samples&#39;</span><span class="p">:</span> <span class="mi">35</span>
+<span class="p">}</span>
+
+<span class="c1"># Crear el modelo con los mejores parámetros</span>
+<span class="n">dbscan_ch</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="o">**</span><span class="n">best_params_dbscan_ch</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el modelo al conjunto de datos</span>
+<span class="n">labels_dbscan_ch</span> <span class="o">=</span> <span class="n">dbscan_ch</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Contar número de clusters (sin incluir ruido)</span>
+<span class="n">n_clusters_ch</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels_dbscan_ch</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">labels_dbscan_ch</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Número de clusters encontrados por DBSCAN: </span><span class="si">{</span><span class="n">n_clusters_ch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcular métricas solo si hay más de 1 cluster</span>
+<span class="k">if</span> <span class="n">n_clusters_ch</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">silhouette_ch</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+    <span class="n">davies_ch</span> <span class="o">=</span> <span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+    <span class="n">calinski_ch</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Métricas del modelo DBSCAN (optimizadas por Calinski-Harabasz):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Silhouette Score: </span><span class="si">{</span><span class="n">silhouette_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Davies-Bouldin Score: </span><span class="si">{</span><span class="n">davies_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calinski-Harabasz Score: </span><span class="si">{</span><span class="n">calinski_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> DBSCAN detectó menos de 2 clusters. No se pueden calcular métricas.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de clusters encontrados por DBSCAN: 18
+
+ Métricas del modelo DBSCAN (optimizadas por Calinski-Harabasz):
+Silhouette Score: 0.3015
+Davies-Bouldin Score: 1.7664
+Calinski-Harabasz Score: 12008.1103
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Reducimos a 2D para visualización</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_pca_ch</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Visualizar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_pca_ch</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_pca_ch</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                      <span class="n">c</span><span class="o">=</span><span class="n">labels_ch</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PCA 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PCA 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Clusters (DBSCAN + Calinski-Harabasz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etiqueta de Cluster&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c839d267370904c41876bdac33dbe16ed9ecdc06da34c47dbd2ef21a8fff6f07.png" src="_images/c839d267370904c41876bdac33dbe16ed9ecdc06da34c47dbd2ef21a8fff6f07.png" />
 </div>
 </div>
 </section>

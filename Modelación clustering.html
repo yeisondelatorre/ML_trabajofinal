@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Create a notebook with MyST Markdown &#8212; Trabajo final</title>
+    <title>Modelación clustering &#8212; Trabajo final</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Modelación clustering';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="ETL - EDA" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,8 +178,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">NYC Data</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html"><strong>ETL - EDA</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Modelación clustering</strong></a></li>
+
+
+
+
+
 </ul>
 
     </div>
@@ -366,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Create a notebook with MyST Markdown</h1>
+    <h1>Modelación clustering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,8 +381,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Modelación clustering</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-no-supervisados">Modelos No Supervisados</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-machine-learning">Modelos de Machine Learning</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">Kmeans</a><ul class="visible nav section-nav flex-column">
@@ -402,6 +406,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-dbscan-davies-bouldin">Implementacion DBSCAN Davies - Bouldin</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-calinski-harabasz">DBSCAN Calinski - Harabasz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-dbscan-calinski-harabasz">Implementacion DBSCAN Calinski - Harabasz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-dbscan">Gráficos DBSCAN</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-dbscan-davies-bouldin">Gráfica DBSCAN Davies - Bouldin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-dbscan-clinski-harabasz">Gráfica DBSCAN Clinski - Harabasz</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#birch-davies-bouldin">BIRCH Davies_Bouldin</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-devis-bouldin">Implementación Devis - Bouldin</a></li>
 </ul>
@@ -446,6 +459,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Calinski_harabasz</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder">autoencoder</a></li>
 </ul>
 </li>
 </ul>
@@ -460,33 +474,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="modelacion-clustering">
+<h1><strong>Modelación clustering</strong><a class="headerlink" href="#modelacion-clustering" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
-<section id="create-a-notebook-with-myst-markdown">
-<h1>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Link to this heading">#</a></h1>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h1>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Link to this heading">#</a></h1>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="modelos-no-supervisados">
@@ -736,9 +732,7 @@ See the YAML at the top of this page for example.</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comenzando la búsqueda de hiperparámetros...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.08 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
@@ -747,7 +741,7 @@ Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
@@ -755,22 +749,22 @@ Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.22 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.24 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.14 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
 
 Todos los resultados de la búsqueda:
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.08 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
@@ -779,7 +773,7 @@ Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.07 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
@@ -787,19 +781,19 @@ Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.22 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.24 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.14 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
 Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
 
 Mejores parámetros:  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}
 </pre></div>
@@ -913,236 +907,75 @@ Calinski-Harabasz Score (MSE): 86988.6291
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Comenzando la búsqueda de hiperparámetros...
 
 Fitting 3 folds for each of 30 candidates, totalling 90 fits
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
-<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
-<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
 
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
-<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
-<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+ Mejores parámetros encontrados:
+{&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}
 
-<span class="ne">KeyboardInterrupt</span>: 
+ Resultados completos ordenados por mejor score:
 
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+                                               params  mean_test_score  \
+0   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.769978   
+5   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.769978   
+10  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.769978   
+25  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.712788   
+20  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.712788   
+15  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.712788   
+6   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.658873   
+11  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.658873   
+1   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.658873   
+3   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.554181   
+8   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.554181   
+13  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.554181   
+2   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.545471   
+12  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.545471   
+7   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.545471   
+26  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.539644   
+16  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.539644   
+21  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.539644   
+24  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.512203   
+29  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.512203   
+19  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.512203   
+17  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.510875   
+22  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.510875   
+27  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.510875   
+23  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.485426   
+28  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.485426   
+18  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.485426   
+14  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.465872   
+4   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.465872   
+9   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.465872   
 
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\model_selection\_search.py:1024,</span> in <span class="ni">BaseSearchCV.fit</span><span class="nt">(self, X, y, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="k">return</span> <span class="n">results</span>
-<span class="ne">-&gt; </span><span class="mi">1024</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_search</span><span class="p">(</span><span class="n">evaluate_candidates</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1026</span> <span class="c1"># multimetric is determined here because in the case of a callable</span>
-<span class="g g-Whitespace">   </span><span class="mi">1027</span> <span class="c1"># self.scoring the return type is only known after calling</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\model_selection\_search.py:1571,</span> in <span class="ni">GridSearchCV._run_search</span><span class="nt">(self, evaluate_candidates)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1570</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Search all candidates in param_grid&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1571</span> <span class="n">evaluate_candidates</span><span class="p">(</span><span class="n">ParameterGrid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_grid</span><span class="p">))</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\model_selection\_search.py:970,</span> in <span class="ni">BaseSearchCV.fit.&lt;locals&gt;.evaluate_candidates</span><span class="nt">(candidate_params, cv, more_results)</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span>     <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">964</span>         <span class="s2">&quot;Fitting </span><span class="si">{0}</span><span class="s2"> folds for each of </span><span class="si">{1}</span><span class="s2"> candidates,&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">965</span>         <span class="s2">&quot; totalling </span><span class="si">{2}</span><span class="s2"> fits&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">966</span>             <span class="n">n_splits</span><span class="p">,</span> <span class="n">n_candidates</span><span class="p">,</span> <span class="n">n_candidates</span> <span class="o">*</span> <span class="n">n_splits</span>
-<span class="g g-Whitespace">    </span><span class="mi">967</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">968</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">970</span> <span class="n">out</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">971</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_fit_and_score</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span>         <span class="n">clone</span><span class="p">(</span><span class="n">base_estimator</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">973</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">974</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">975</span>         <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">976</span>         <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">977</span>         <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">978</span>         <span class="n">split_progress</span><span class="o">=</span><span class="p">(</span><span class="n">split_idx</span><span class="p">,</span> <span class="n">n_splits</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">979</span>         <span class="n">candidate_progress</span><span class="o">=</span><span class="p">(</span><span class="n">cand_idx</span><span class="p">,</span> <span class="n">n_candidates</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">980</span>         <span class="o">**</span><span class="n">fit_and_score_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">981</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">982</span>     <span class="k">for</span> <span class="p">(</span><span class="n">cand_idx</span><span class="p">,</span> <span class="n">parameters</span><span class="p">),</span> <span class="p">(</span><span class="n">split_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">))</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">983</span>         <span class="nb">enumerate</span><span class="p">(</span><span class="n">candidate_params</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">984</span>         <span class="nb">enumerate</span><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">routed_params</span><span class="o">.</span><span class="n">splitter</span><span class="o">.</span><span class="n">split</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">985</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">986</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\utils\parallel.py:77,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">77</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1703,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1702</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">-&gt; </span><span class="mi">1703</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abort</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1704</span> <span class="k">raise</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1614,</span> in <span class="ni">Parallel._abort</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1613</span>     <span class="n">ensure_ready</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_backend</span>
-<span class="ne">-&gt; </span><span class="mi">1614</span>     <span class="n">backend</span><span class="o">.</span><span class="n">abort_everything</span><span class="p">(</span><span class="n">ensure_ready</span><span class="o">=</span><span class="n">ensure_ready</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1615</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aborted</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\_parallel_backends.py:620,</span> in <span class="ni">LokyBackend.abort_everything</span><span class="nt">(self, ensure_ready)</span>
-<span class="g g-Whitespace">    </span><span class="mi">618</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Shutdown the workers and restart a new one with the same parameters</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workers</span><span class="o">.</span><span class="n">terminate</span><span class="p">(</span><span class="n">kill_workers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">621</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workers</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\executor.py:87,</span> in <span class="ni">MemmappingExecutor.terminate</span><span class="nt">(self, kill_workers)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_submit_resize_lock</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">87</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_temp_folder_manager</span><span class="o">.</span><span class="n">_clean_temporary_resources</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span>         <span class="n">force</span><span class="o">=</span><span class="n">kill_workers</span><span class="p">,</span> <span class="n">allow_non_empty</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\_memmapping_reducer.py:615,</span> in <span class="ni">TemporaryResourcesManager._clean_temporary_resources</span><span class="nt">(self, context_id, force, allow_non_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">for</span> <span class="n">context_id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cached_temp_folders</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">615</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_clean_temporary_resources</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">616</span>             <span class="n">context_id</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span> <span class="n">allow_non_empty</span><span class="o">=</span><span class="n">allow_non_empty</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">618</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\_memmapping_reducer.py:626,</span> in <span class="ni">TemporaryResourcesManager._clean_temporary_resources</span><span class="nt">(self, context_id, force, allow_non_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">force</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="c1"># Some workers have failed and the ref counted might</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span>     <span class="c1"># be off. The workers should have shut down by this</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span>     <span class="c1"># time so forcefully clean up the files.</span>
-<span class="ne">--&gt; </span><span class="mi">626</span>     <span class="n">resource_tracker</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span>         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;file&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:183,</span> in <span class="ni">ResourceTracker.unregister</span><span class="nt">(self, name, rtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Unregister a named resource with resource tracker.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">183</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_running</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send</span><span class="p">(</span><span class="s2">&quot;UNREGISTER&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rtype</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:95,</span> in <span class="ni">ResourceTracker.ensure_running</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="c1"># resource tracker was launched before, is it still running?</span>
-<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_alive</span><span class="p">():</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="c1"># =&gt; still alive</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="k">return</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:170,</span> in <span class="ni">ResourceTracker._check_alive</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">170</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_send</span><span class="p">(</span><span class="s2">&quot;PROBE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">except</span> <span class="ne">BrokenPipeError</span><span class="p">:</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:197,</span> in <span class="ni">ResourceTracker._send</span><span class="nt">(self, cmd, name, rtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">rtype</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">197</span> <span class="n">nbytes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fd</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="k">assert</span> <span class="n">nbytes</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-<span class="ne">OSError</span>: [Errno 22] Invalid argument
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">35</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">estimator</span><span class="o">=</span><span class="n">kmeans</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>   <span class="c1"># Usa todos los núcleos disponibles</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Comenzando la búsqueda de hiperparámetros...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">35</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="c1"># Mostrar mejores parámetros</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Mejores parámetros encontrados:&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\base.py:1389,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1385</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1386</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\sklearn\model_selection\_search.py:1034,</span> in <span class="ni">BaseSearchCV.fit</span><span class="nt">(self, X, y, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scoring</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">multimetric_</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1033</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_refit_for_multimetric</span><span class="p">(</span><span class="n">first_test_score</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1034</span>         <span class="n">refit_metric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">refit</span>
-<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="c1"># For multi-metric evaluation, store the best_index_, best_params_ and</span>
-<span class="g g-Whitespace">   </span><span class="mi">1037</span> <span class="c1"># best_score_ iff refit is one of the scorer names</span>
-<span class="g g-Whitespace">   </span><span class="mi">1038</span> <span class="c1"># In single metric evaluation, refit_metric is &quot;score&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refit</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">multimetric_</span><span class="p">:</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1354,</span> in <span class="ni">Parallel.__exit__</span><span class="nt">(self, exc_type, exc_value, traceback)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1352</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calling</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1353</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_abort</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1354</span> <span class="bp">self</span><span class="o">.</span><span class="n">_terminate_and_reset</span><span class="p">()</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\parallel.py:1386,</span> in <span class="ni">Parallel._terminate_and_reset</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calling</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1385</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_backend</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1386</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\_parallel_backends.py:610,</span> in <span class="ni">LokyBackend.terminate</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">605</span> <span class="k">def</span><span class="w"> </span><span class="nf">terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">606</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span>         <span class="c1"># Don&#39;t terminate the workers as we want to reuse them in later</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>         <span class="c1"># calls, but cleanup the temporary resources that the Parallel call</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span>         <span class="c1"># created. This &#39;hack&#39; requires a private, low-level operation.</span>
-<span class="ne">--&gt; </span><span class="mi">610</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_workers</span><span class="o">.</span><span class="n">_temp_folder_manager</span><span class="o">.</span><span class="n">_clean_temporary_resources</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span>             <span class="n">context_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">_id</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_workers</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">615</span>     <span class="bp">self</span><span class="o">.</span><span class="n">reset_batch_stats</span><span class="p">()</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\_memmapping_reducer.py:630,</span> in <span class="ni">TemporaryResourcesManager._clean_temporary_resources</span><span class="nt">(self, context_id, force, allow_non_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span>         <span class="n">resource_tracker</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span>             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;file&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">630</span>         <span class="n">resource_tracker</span><span class="o">.</span><span class="n">maybe_unlink</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span>             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;file&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">634</span> <span class="c1"># When forcing clean-up, try to delete the folder even if some</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="c1"># files are still in it. Otherwise, try to delete the folder</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span> <span class="n">allow_non_empty</span> <span class="o">|=</span> <span class="n">force</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:188,</span> in <span class="ni">ResourceTracker.maybe_unlink</span><span class="nt">(self, name, rtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">def</span><span class="w"> </span><span class="nf">maybe_unlink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Decrement the refcount of a resource, and delete it if it hits 0&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">188</span>     <span class="bp">self</span><span class="o">.</span><span class="n">ensure_running</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_send</span><span class="p">(</span><span class="s2">&quot;MAYBE_UNLINK&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rtype</span><span class="p">)</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:95,</span> in <span class="ni">ResourceTracker.ensure_running</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>         <span class="c1"># resource tracker was launched before, is it still running?</span>
-<span class="ne">---&gt; </span><span class="mi">95</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_alive</span><span class="p">():</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>             <span class="c1"># =&gt; still alive</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="k">return</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="c1"># =&gt; dead, launch it again</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:170,</span> in <span class="ni">ResourceTracker._check_alive</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Check for the existence of the resource tracker process.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">170</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_send</span><span class="p">(</span><span class="s2">&quot;PROBE&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">except</span> <span class="ne">BrokenPipeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">return</span> <span class="kc">False</span>
-
-<span class="nn">File ~\miniconda3\envs\ml_venv\lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:197,</span> in <span class="ni">ResourceTracker._send</span><span class="nt">(self, cmd, name, rtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;name too long&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">rtype</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">197</span> <span class="n">nbytes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fd</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="k">assert</span> <span class="n">nbytes</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-<span class="ne">OSError</span>: [Errno 22] Invalid argument
+    std_test_score  mean_fit_time  mean_score_time  
+0         0.082934       0.200018       120.145832  
+5         0.082934       0.257356       109.051311  
+10        0.082934       0.214405       117.099221  
+25        0.002475       1.331599       110.613786  
+20        0.002475       1.216703       105.933344  
+15        0.002475       1.004289       114.367681  
+6         0.084066       0.339612       109.844306  
+11        0.084066       0.289057       116.171338  
+1         0.084066       0.212820       106.403759  
+3         0.005062       0.263929       114.182827  
+8         0.005062       0.499726       112.127497  
+13        0.005062       0.341081       115.523051  
+2         0.038309       0.160300       106.417812  
+12        0.038309       0.327720       108.071844  
+7         0.038309       0.289422       105.749472  
+26        0.001771       1.587833       100.254990  
+16        0.001771       1.976658       107.042777  
+21        0.001771       1.597617       106.306765  
+24        0.001088       3.050885       106.598255  
+29        0.001088       3.409545        63.794752  
+19        0.001088       3.349383       118.543340  
+17        0.088444       2.084103       117.882944  
+22        0.088444       1.793930       111.981400  
+27        0.088444       1.910414        80.886972  
+23        0.009449       3.338573       115.838009  
+28        0.009449       3.345438        69.197501  
+18        0.009449       2.490142       107.772788  
+14        0.065177       0.580478       102.225070  
+4         0.065177       0.316623       114.747822  
+9         0.065177       0.400358       111.759492  
 </pre></div>
 </div>
 </div>
@@ -2793,6 +2626,715 @@ Mejor Davies-Bouldin Score: 1.0259
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="dbscan-calinski-harabasz">
+<h2>DBSCAN Calinski - Harabasz<a class="headerlink" href="#dbscan-calinski-harabasz" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">calinski_harabasz_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="c1"># Definir el rango de parámetros para DBSCAN</span>
+<span class="n">param_grid_dbscan</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="n">eps</span><span class="p">,</span> <span class="s1">&#39;min_samples&#39;</span><span class="p">:</span> <span class="n">min_samples</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">eps</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">min_samples</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Objeto para dividir los datos en 3 folds</span>
+<span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">results_dbscan_ch</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🔍 Comenzando la búsqueda de hiperparámetros para DBSCAN con Calinski-Harabasz...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">param_grid_dbscan</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Buscando&quot;</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fit_times</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">score_times</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">val_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X_sample</span><span class="p">):</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span> <span class="o">=</span> <span class="n">X_sample</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X_sample</span><span class="p">[</span><span class="n">val_index</span><span class="p">]</span>
+
+        <span class="n">start_fit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">dbscan_temp</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">labels_train</span> <span class="o">=</span> <span class="n">dbscan_temp</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+        <span class="n">fit_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_fit</span><span class="p">)</span>
+
+        <span class="n">start_score</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># CH score no es válido con 1 solo cluster</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels_train</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">labels_val</span> <span class="o">=</span> <span class="n">dbscan_temp</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels_val</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">labels_val</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="n">score_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_score</span><span class="p">)</span>
+
+    <span class="n">mean_ch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+    <span class="n">mean_fit_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">fit_times</span><span class="p">)</span>
+    <span class="n">mean_score_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score_times</span><span class="p">)</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">mean_fit_time</span> <span class="o">+</span> <span class="n">mean_score_time</span>
+
+    <span class="n">results_dbscan_ch</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">params</span><span class="p">,</span> <span class="n">mean_ch</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
+    <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">, CH Score Promedio: </span><span class="si">{</span><span class="n">mean_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Tiempo total: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> segundos&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar todos los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Resultados de la búsqueda:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">params</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">duration</span> <span class="ow">in</span> <span class="n">results_dbscan_ch</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">, CH Score Promedio: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Tiempo: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+
+<span class="c1"># Obtener los mejores parámetros (máximo CH)</span>
+<span class="n">best_result_ch</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">results_dbscan_ch</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">best_params_dbscan_ch</span> <span class="o">=</span> <span class="n">best_result_ch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">best_score_dbscan_ch</span> <span class="o">=</span> <span class="n">best_result_ch</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Mejores parámetros encontrados para DBSCAN (Calinski-Harabasz):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parámetros: </span><span class="si">{</span><span class="n">best_params_dbscan_ch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mejor Calinski-Harabasz Score: </span><span class="si">{</span><span class="n">best_score_dbscan_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔍 Comenzando la búsqueda de hiperparámetros para DBSCAN con Calinski-Harabasz...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   1%|          | 1/81 [01:26&lt;1:55:03, 86.30s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, CH Score Promedio: 687.3525, Tiempo total: 28.75 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   2%|▏         | 2/81 [02:50&lt;1:51:46, 84.89s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, CH Score Promedio: 1424.1599, Tiempo total: 27.96 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   4%|▎         | 3/81 [04:11&lt;1:47:59, 83.07s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, CH Score Promedio: 1938.9900, Tiempo total: 26.96 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   5%|▍         | 4/81 [05:31&lt;1:45:00, 81.82s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, CH Score Promedio: 2174.8832, Tiempo total: 26.62 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   6%|▌         | 5/81 [06:51&lt;1:42:54, 81.24s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, CH Score Promedio: 2368.0556, Tiempo total: 26.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   7%|▋         | 6/81 [08:11&lt;1:41:02, 80.83s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, CH Score Promedio: 2137.2628, Tiempo total: 26.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   9%|▊         | 7/81 [09:31&lt;1:39:26, 80.63s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, CH Score Promedio: 2342.7719, Tiempo total: 26.73 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  10%|▉         | 8/81 [10:51&lt;1:38:00, 80.56s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, CH Score Promedio: 2340.9401, Tiempo total: 26.79 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  11%|█         | 9/81 [12:11&lt;1:36:22, 80.32s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, CH Score Promedio: 2381.0914, Tiempo total: 26.58 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  12%|█▏        | 10/81 [14:20&lt;1:52:43, 95.26s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, CH Score Promedio: 1220.1272, Tiempo total: 42.88 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  14%|█▎        | 11/81 [16:27&lt;2:02:25, 104.94s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, CH Score Promedio: 2045.9629, Tiempo total: 42.29 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  15%|█▍        | 12/81 [18:35&lt;2:08:44, 111.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, CH Score Promedio: 2574.2550, Tiempo total: 42.65 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  16%|█▌        | 13/81 [20:43&lt;2:12:29, 116.91s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, CH Score Promedio: 2738.1482, Tiempo total: 42.77 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  17%|█▋        | 14/81 [22:51&lt;2:14:24, 120.37s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, CH Score Promedio: 3278.9350, Tiempo total: 42.78 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  19%|█▊        | 15/81 [25:00&lt;2:15:14, 122.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, CH Score Promedio: 3536.0696, Tiempo total: 42.97 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  20%|█▉        | 16/81 [27:09&lt;2:14:54, 124.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, CH Score Promedio: 3403.9691, Tiempo total: 42.73 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  21%|██        | 17/81 [29:17&lt;2:14:07, 125.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, CH Score Promedio: 3298.7562, Tiempo total: 42.84 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  22%|██▏       | 18/81 [31:25&lt;2:12:45, 126.44s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, CH Score Promedio: 3345.8062, Tiempo total: 42.68 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  23%|██▎       | 19/81 [34:05&lt;2:21:02, 136.50s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, CH Score Promedio: 1818.9938, Tiempo total: 53.31 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  25%|██▍       | 20/81 [36:45&lt;2:25:50, 143.46s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, CH Score Promedio: 2305.6039, Tiempo total: 53.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  26%|██▌       | 21/81 [39:25&lt;2:28:31, 148.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, CH Score Promedio: 2877.5965, Tiempo total: 53.44 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  27%|██▋       | 22/81 [42:05&lt;2:29:21, 151.89s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, CH Score Promedio: 3036.9036, Tiempo total: 53.24 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  28%|██▊       | 23/81 [44:45&lt;2:29:21, 154.50s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, CH Score Promedio: 3140.8074, Tiempo total: 53.51 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  30%|██▉       | 24/81 [47:25&lt;2:28:13, 156.02s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, CH Score Promedio: 3245.1206, Tiempo total: 53.18 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  31%|███       | 25/81 [50:03&lt;2:26:14, 156.68s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, CH Score Promedio: 3487.8863, Tiempo total: 52.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  32%|███▏      | 26/81 [52:42&lt;2:24:13, 157.34s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, CH Score Promedio: 3628.1965, Tiempo total: 52.95 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  33%|███▎      | 27/81 [55:20&lt;2:21:47, 157.54s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, CH Score Promedio: 3829.7506, Tiempo total: 52.67 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  35%|███▍      | 28/81 [58:24&lt;2:26:05, 165.38s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, CH Score Promedio: 2154.9650, Tiempo total: 61.21 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  36%|███▌      | 29/81 [1:01:25&lt;2:27:26, 170.12s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, CH Score Promedio: 2599.5774, Tiempo total: 60.38 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  37%|███▋      | 30/81 [1:04:26&lt;2:27:28, 173.49s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, CH Score Promedio: 2936.0245, Tiempo total: 60.45 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  38%|███▊      | 31/81 [1:07:29&lt;2:26:44, 176.09s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, CH Score Promedio: 3217.0032, Tiempo total: 60.71 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  40%|███▉      | 32/81 [1:10:31&lt;2:25:25, 178.07s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, CH Score Promedio: 3288.0815, Tiempo total: 60.89 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  41%|████      | 33/81 [1:13:33&lt;2:23:25, 179.29s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, CH Score Promedio: 3289.2953, Tiempo total: 60.71 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  42%|████▏     | 34/81 [1:16:37&lt;2:21:35, 180.75s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, CH Score Promedio: 3435.2470, Tiempo total: 61.38 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  43%|████▎     | 35/81 [1:19:44&lt;2:19:57, 182.56s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, CH Score Promedio: 3489.9058, Tiempo total: 62.24 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  44%|████▍     | 36/81 [1:22:49&lt;2:17:22, 183.16s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, CH Score Promedio: 3552.0844, Tiempo total: 61.52 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  46%|████▌     | 37/81 [1:26:57&lt;2:28:33, 202.59s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, CH Score Promedio: 2361.1894, Tiempo total: 82.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  47%|████▋     | 38/81 [1:31:14&lt;2:37:01, 219.11s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, CH Score Promedio: 2803.2024, Tiempo total: 85.88 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  48%|████▊     | 39/81 [1:35:26&lt;2:40:13, 228.90s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, CH Score Promedio: 2890.5959, Tiempo total: 83.91 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  49%|████▉     | 40/81 [1:39:35&lt;2:40:33, 234.97s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, CH Score Promedio: 3271.8108, Tiempo total: 83.03 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  51%|█████     | 41/81 [1:43:48&lt;2:40:06, 240.16s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, CH Score Promedio: 3213.0727, Tiempo total: 84.08 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  52%|█████▏    | 42/81 [1:47:54&lt;2:37:20, 242.05s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, CH Score Promedio: 3559.1737, Tiempo total: 82.15 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  53%|█████▎    | 43/81 [1:52:06&lt;2:35:07, 244.92s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, CH Score Promedio: 3573.9763, Tiempo total: 83.87 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  54%|█████▍    | 44/81 [1:56:13&lt;2:31:34, 245.79s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, CH Score Promedio: 3501.0968, Tiempo total: 82.59 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  56%|█████▌    | 45/81 [2:00:23&lt;2:28:03, 246.77s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, CH Score Promedio: 3562.1630, Tiempo total: 83.01 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  57%|█████▋    | 46/81 [2:04:44&lt;2:26:36, 251.33s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, CH Score Promedio: 2378.3928, Tiempo total: 87.31 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  58%|█████▊    | 47/81 [2:09:10&lt;2:24:54, 255.72s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, CH Score Promedio: 3003.4283, Tiempo total: 88.65 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  59%|█████▉    | 48/81 [2:13:33&lt;2:21:48, 257.85s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, CH Score Promedio: 3015.9227, Tiempo total: 87.60 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  60%|██████    | 49/81 [2:17:55&lt;2:18:09, 259.06s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, CH Score Promedio: 3291.7134, Tiempo total: 87.29 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  62%|██████▏   | 50/81 [2:22:21&lt;2:14:56, 261.18s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, CH Score Promedio: 3572.6401, Tiempo total: 88.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  63%|██████▎   | 51/81 [2:26:46&lt;2:11:04, 262.15s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, CH Score Promedio: 3590.0814, Tiempo total: 88.13 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  64%|██████▍   | 52/81 [2:31:07&lt;2:06:34, 261.87s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, CH Score Promedio: 3672.2801, Tiempo total: 87.06 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  65%|██████▌   | 53/81 [2:35:06&lt;1:58:59, 254.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, CH Score Promedio: 3691.3938, Tiempo total: 79.62 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  67%|██████▋   | 54/81 [2:38:30&lt;1:47:56, 239.85s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, CH Score Promedio: 3531.7146, Tiempo total: 68.18 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  68%|██████▊   | 55/81 [2:42:15&lt;1:41:59, 235.35s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, CH Score Promedio: 2499.0472, Tiempo total: 74.94 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  69%|██████▉   | 56/81 [2:45:53&lt;1:35:49, 229.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, CH Score Promedio: 3150.7933, Tiempo total: 72.47 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  70%|███████   | 57/81 [2:49:30&lt;1:30:31, 226.31s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, CH Score Promedio: 3212.5994, Tiempo total: 72.58 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  72%|███████▏  | 58/81 [2:53:10&lt;1:25:56, 224.22s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, CH Score Promedio: 3201.4132, Tiempo total: 73.10 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  73%|███████▎  | 59/81 [2:56:46&lt;1:21:18, 221.75s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, CH Score Promedio: 3656.3829, Tiempo total: 71.98 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  74%|███████▍  | 60/81 [3:00:26&lt;1:17:26, 221.26s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, CH Score Promedio: 3657.3993, Tiempo total: 73.37 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  75%|███████▌  | 61/81 [3:04:11&lt;1:14:11, 222.58s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, CH Score Promedio: 3669.4552, Tiempo total: 75.22 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  77%|███████▋  | 62/81 [3:08:02&lt;1:11:12, 224.86s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, CH Score Promedio: 3777.0843, Tiempo total: 76.72 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  78%|███████▊  | 63/81 [3:11:53&lt;1:08:02, 226.81s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, CH Score Promedio: 3764.6035, Tiempo total: 77.12 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  79%|███████▉  | 64/81 [3:15:53&lt;1:05:22, 230.73s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, CH Score Promedio: 2535.2921, Tiempo total: 79.95 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  80%|████████  | 65/81 [3:19:52&lt;1:02:11, 233.24s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, CH Score Promedio: 3214.2637, Tiempo total: 79.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  81%|████████▏ | 66/81 [3:23:51&lt;58:44, 234.95s/it]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, CH Score Promedio: 3325.7378, Tiempo total: 79.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  83%|████████▎ | 67/81 [3:27:55&lt;55:28, 237.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, CH Score Promedio: 3356.6382, Tiempo total: 81.41 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  84%|████████▍ | 68/81 [3:31:53&lt;51:29, 237.64s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, CH Score Promedio: 3573.3457, Tiempo total: 79.13 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  85%|████████▌ | 69/81 [3:35:52&lt;47:38, 238.23s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, CH Score Promedio: 3811.5859, Tiempo total: 79.87 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  86%|████████▋ | 70/81 [3:39:57&lt;44:02, 240.18s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, CH Score Promedio: 3628.9251, Tiempo total: 81.57 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  88%|████████▊ | 71/81 [3:44:02&lt;40:15, 241.53s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, CH Score Promedio: 3796.4637, Tiempo total: 81.55 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  89%|████████▉ | 72/81 [3:48:04&lt;36:14, 241.65s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, CH Score Promedio: 3819.8131, Tiempo total: 80.63 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  90%|█████████ | 73/81 [3:54:38&lt;38:20, 287.57s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, CH Score Promedio: 3002.5113, Tiempo total: 131.55 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  91%|█████████▏| 74/81 [4:01:24&lt;37:41, 323.01s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, CH Score Promedio: 3833.1627, Tiempo total: 135.19 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  93%|█████████▎| 75/81 [4:08:01&lt;34:32, 345.35s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, CH Score Promedio: 4076.8049, Tiempo total: 132.45 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  94%|█████████▍| 76/81 [4:14:29&lt;29:49, 357.93s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, CH Score Promedio: 3997.9276, Tiempo total: 129.06 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  95%|█████████▌| 77/81 [4:20:57&lt;24:28, 367.11s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, CH Score Promedio: 4290.7456, Tiempo total: 129.49 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  96%|█████████▋| 78/81 [4:27:32&lt;18:46, 375.37s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, CH Score Promedio: 4455.5229, Tiempo total: 131.50 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  98%|█████████▊| 79/81 [4:34:04&lt;12:40, 380.42s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, CH Score Promedio: 4553.0719, Tiempo total: 130.69 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  99%|█████████▉| 80/81 [4:40:50&lt;06:27, 388.00s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, CH Score Promedio: 4420.6019, Tiempo total: 135.19 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando: 100%|██████████| 81/81 [4:47:31&lt;00:00, 212.98s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, CH Score Promedio: 4372.8803, Tiempo total: 133.78 segundos
+
+ Resultados de la búsqueda:
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, CH Score Promedio: 687.3525, Tiempo: 28.75 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, CH Score Promedio: 1424.1599, Tiempo: 27.96 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, CH Score Promedio: 1938.9900, Tiempo: 26.96 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, CH Score Promedio: 2174.8832, Tiempo: 26.62 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, CH Score Promedio: 2368.0556, Tiempo: 26.72 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, CH Score Promedio: 2137.2628, Tiempo: 26.67 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, CH Score Promedio: 2342.7719, Tiempo: 26.73 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, CH Score Promedio: 2340.9401, Tiempo: 26.79 s
+Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, CH Score Promedio: 2381.0914, Tiempo: 26.58 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, CH Score Promedio: 1220.1272, Tiempo: 42.88 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, CH Score Promedio: 2045.9629, Tiempo: 42.29 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, CH Score Promedio: 2574.2550, Tiempo: 42.65 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, CH Score Promedio: 2738.1482, Tiempo: 42.77 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, CH Score Promedio: 3278.9350, Tiempo: 42.78 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, CH Score Promedio: 3536.0696, Tiempo: 42.97 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, CH Score Promedio: 3403.9691, Tiempo: 42.73 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, CH Score Promedio: 3298.7562, Tiempo: 42.84 s
+Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, CH Score Promedio: 3345.8062, Tiempo: 42.68 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, CH Score Promedio: 1818.9938, Tiempo: 53.31 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, CH Score Promedio: 2305.6039, Tiempo: 53.21 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, CH Score Promedio: 2877.5965, Tiempo: 53.44 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, CH Score Promedio: 3036.9036, Tiempo: 53.24 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, CH Score Promedio: 3140.8074, Tiempo: 53.51 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, CH Score Promedio: 3245.1206, Tiempo: 53.18 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, CH Score Promedio: 3487.8863, Tiempo: 52.72 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, CH Score Promedio: 3628.1965, Tiempo: 52.95 s
+Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, CH Score Promedio: 3829.7506, Tiempo: 52.67 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, CH Score Promedio: 2154.9650, Tiempo: 61.21 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, CH Score Promedio: 2599.5774, Tiempo: 60.38 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, CH Score Promedio: 2936.0245, Tiempo: 60.45 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, CH Score Promedio: 3217.0032, Tiempo: 60.71 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, CH Score Promedio: 3288.0815, Tiempo: 60.89 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, CH Score Promedio: 3289.2953, Tiempo: 60.71 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, CH Score Promedio: 3435.2470, Tiempo: 61.38 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, CH Score Promedio: 3489.9058, Tiempo: 62.24 s
+Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, CH Score Promedio: 3552.0844, Tiempo: 61.52 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, CH Score Promedio: 2361.1894, Tiempo: 82.63 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, CH Score Promedio: 2803.2024, Tiempo: 85.88 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, CH Score Promedio: 2890.5959, Tiempo: 83.91 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, CH Score Promedio: 3271.8108, Tiempo: 83.03 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, CH Score Promedio: 3213.0727, Tiempo: 84.08 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, CH Score Promedio: 3559.1737, Tiempo: 82.15 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, CH Score Promedio: 3573.9763, Tiempo: 83.87 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, CH Score Promedio: 3501.0968, Tiempo: 82.59 s
+Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, CH Score Promedio: 3562.1630, Tiempo: 83.01 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, CH Score Promedio: 2378.3928, Tiempo: 87.31 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, CH Score Promedio: 3003.4283, Tiempo: 88.65 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, CH Score Promedio: 3015.9227, Tiempo: 87.60 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, CH Score Promedio: 3291.7134, Tiempo: 87.29 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, CH Score Promedio: 3572.6401, Tiempo: 88.69 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, CH Score Promedio: 3590.0814, Tiempo: 88.13 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, CH Score Promedio: 3672.2801, Tiempo: 87.06 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, CH Score Promedio: 3691.3938, Tiempo: 79.62 s
+Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, CH Score Promedio: 3531.7146, Tiempo: 68.18 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, CH Score Promedio: 2499.0472, Tiempo: 74.94 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, CH Score Promedio: 3150.7933, Tiempo: 72.47 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, CH Score Promedio: 3212.5994, Tiempo: 72.58 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, CH Score Promedio: 3201.4132, Tiempo: 73.10 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, CH Score Promedio: 3656.3829, Tiempo: 71.98 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, CH Score Promedio: 3657.3993, Tiempo: 73.37 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, CH Score Promedio: 3669.4552, Tiempo: 75.22 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, CH Score Promedio: 3777.0843, Tiempo: 76.72 s
+Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, CH Score Promedio: 3764.6035, Tiempo: 77.12 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, CH Score Promedio: 2535.2921, Tiempo: 79.95 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, CH Score Promedio: 3214.2637, Tiempo: 79.69 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, CH Score Promedio: 3325.7378, Tiempo: 79.63 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, CH Score Promedio: 3356.6382, Tiempo: 81.41 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, CH Score Promedio: 3573.3457, Tiempo: 79.13 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, CH Score Promedio: 3811.5859, Tiempo: 79.87 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, CH Score Promedio: 3628.9251, Tiempo: 81.57 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, CH Score Promedio: 3796.4637, Tiempo: 81.55 s
+Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, CH Score Promedio: 3819.8131, Tiempo: 80.63 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, CH Score Promedio: 3002.5113, Tiempo: 131.55 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, CH Score Promedio: 3833.1627, Tiempo: 135.19 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, CH Score Promedio: 4076.8049, Tiempo: 132.45 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, CH Score Promedio: 3997.9276, Tiempo: 129.06 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, CH Score Promedio: 4290.7456, Tiempo: 129.49 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, CH Score Promedio: 4455.5229, Tiempo: 131.50 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, CH Score Promedio: 4553.0719, Tiempo: 130.69 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, CH Score Promedio: 4420.6019, Tiempo: 135.19 s
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, CH Score Promedio: 4372.8803, Tiempo: 133.78 s
+
+ Mejores parámetros encontrados para DBSCAN (Calinski-Harabasz):
+Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}
+Mejor Calinski-Harabasz Score: 4553.0719
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="implementacion-dbscan-calinski-harabasz">
+<h3>Implementacion DBSCAN Calinski - Harabasz<a class="headerlink" href="#implementacion-dbscan-calinski-harabasz" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">DBSCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span><span class="p">,</span> <span class="n">davies_bouldin_score</span><span class="p">,</span> <span class="n">calinski_harabasz_score</span>
+
+<span class="c1"># Definir los mejores parámetros encontrados previamente por Calinski-Harabasz</span>
+<span class="n">best_params_dbscan_ch</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+    <span class="s1">&#39;min_samples&#39;</span><span class="p">:</span> <span class="mi">35</span>
+<span class="p">}</span>
+
+<span class="c1"># Crear el modelo con los mejores parámetros</span>
+<span class="n">dbscan_ch</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="o">**</span><span class="n">best_params_dbscan_ch</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el modelo al conjunto de datos</span>
+<span class="n">labels_dbscan_ch</span> <span class="o">=</span> <span class="n">dbscan_ch</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Contar número de clusters (sin incluir ruido)</span>
+<span class="n">n_clusters_ch</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels_dbscan_ch</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">labels_dbscan_ch</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Número de clusters encontrados por DBSCAN: </span><span class="si">{</span><span class="n">n_clusters_ch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcular métricas solo si hay más de 1 cluster</span>
+<span class="k">if</span> <span class="n">n_clusters_ch</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">silhouette_ch</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+    <span class="n">davies_ch</span> <span class="o">=</span> <span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+    <span class="n">calinski_ch</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X_sample</span><span class="p">,</span> <span class="n">labels_dbscan_ch</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Métricas del modelo DBSCAN (optimizadas por Calinski-Harabasz):&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Silhouette Score: </span><span class="si">{</span><span class="n">silhouette_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Davies-Bouldin Score: </span><span class="si">{</span><span class="n">davies_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calinski-Harabasz Score: </span><span class="si">{</span><span class="n">calinski_ch</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> DBSCAN detectó menos de 2 clusters. No se pueden calcular métricas.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de clusters encontrados por DBSCAN: 18
+
+ Métricas del modelo DBSCAN (optimizadas por Calinski-Harabasz):
+Silhouette Score: 0.3015
+Davies-Bouldin Score: 1.7664
+Calinski-Harabasz Score: 12008.1103
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="graficos-dbscan">
+<h1>Gráficos DBSCAN<a class="headerlink" href="#graficos-dbscan" title="Link to this heading">#</a></h1>
 <p><strong>Gráfica DBSCAN</strong> Silhouette</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2822,7 +3364,8 @@ Mejor Davies-Bouldin Score: 1.0259
 <img alt="_images/81a5efe087b8cc93a3401b0a2fa7f0c2c843bbc1e249355e87030c81550755a1.png" src="_images/81a5efe087b8cc93a3401b0a2fa7f0c2c843bbc1e249355e87030c81550755a1.png" />
 </div>
 </div>
-<p>Gráfica DBSCAN Davies</p>
+<section id="grafica-dbscan-davies-bouldin">
+<h2>Gráfica DBSCAN Davies - Bouldin<a class="headerlink" href="#grafica-dbscan-davies-bouldin" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
@@ -2856,6 +3399,36 @@ Mejor Davies-Bouldin Score: 1.0259
 </div>
 </div>
 </section>
+<section id="grafica-dbscan-clinski-harabasz">
+<h2>Gráfica DBSCAN Clinski - Harabasz<a class="headerlink" href="#grafica-dbscan-clinski-harabasz" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Reducimos a 2D para visualización</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_pca_ch</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># Visualizar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_pca_ch</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_pca_ch</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                      <span class="n">c</span><span class="o">=</span><span class="n">labels_ch</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PCA 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PCA 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Clusters (DBSCAN + Calinski-Harabasz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etiqueta de Cluster&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c839d267370904c41876bdac33dbe16ed9ecdc06da34c47dbd2ef21a8fff6f07.png" src="_images/c839d267370904c41876bdac33dbe16ed9ecdc06da34c47dbd2ef21a8fff6f07.png" />
+</div>
+</div>
 </section>
 <section id="birch-davies-bouldin">
 <h2>BIRCH Davies_Bouldin<a class="headerlink" href="#birch-davies-bouldin" title="Link to this heading">#</a></h2>
@@ -9300,6 +9873,137 @@ Name: proportion, dtype: float64
 </div>
 </section>
 </section>
+<section id="autoencoder">
+<h2>autoencoder<a class="headerlink" href="#autoencoder" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.compose</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># --------------------------</span>
+<span class="c1"># 1. Custom Transformer (Autoencoder)</span>
+<span class="c1"># --------------------------</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AutoencoderEncoder</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding_dim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hidden_units</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoding_dim</span> <span class="o">=</span> <span class="n">encoding_dim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_units</span> <span class="o">=</span> <span class="n">hidden_units</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epochs</span> <span class="o">=</span> <span class="n">epochs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autoencoder</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+            <span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,)),</span>
+            <span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding_dim</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;encoder&#39;</span><span class="p">),</span>
+            <span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+            <span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">input_dim</span><span class="p">)</span>
+        <span class="p">])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">model</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">input_dim</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autoencoder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_model</span><span class="p">(</span><span class="n">input_dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autoencoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">autoencoder</span><span class="o">.</span><span class="n">input</span><span class="p">,</span>
+                                   <span class="n">outputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">autoencoder</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;encoder&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># --------------------------</span>
+<span class="c1"># 3. Pipeline: Autoencoder + KMeans</span>
+<span class="c1"># --------------------------</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;autoencoder&#39;</span><span class="p">,</span> <span class="n">AutoencoderEncoder</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;kmeans&#39;</span><span class="p">,</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="c1"># --------------------------</span>
+<span class="c1"># 4. GridSearchCV</span>
+<span class="c1"># --------------------------</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;autoencoder__encoding_dim&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;autoencoder__hidden_units&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span>
+    <span class="s1">&#39;kmeans__n_clusters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">silhouette_scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="n">latent_space</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;autoencoder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;kmeans&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">latent_space</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">latent_space</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">silhouette_scorer</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🔍 Entrenando Autoencoder + KMeans con búsqueda de hiperparámetros...&quot;</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+
+<span class="c1"># --------------------------</span>
+<span class="c1"># 5. Resultados</span>
+<span class="c1"># --------------------------</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Mejores parámetros encontrados:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Obtener etiquetas finales</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">X_latent</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;autoencoder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_sample</span><span class="p">)</span>
+<span class="n">final_labels</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;kmeans&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_latent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔍 Entrenando Autoencoder + KMeans con búsqueda de hiperparámetros...
+
+✅ Mejores parámetros encontrados:
+{&#39;autoencoder__encoding_dim&#39;: 5, &#39;autoencoder__hidden_units&#39;: 64, &#39;kmeans__n_clusters&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Reducimos a 2D el espacio latente para visualizar</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_latent</span><span class="p">)</span>
+
+<span class="c1"># Visualizamos los clusters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                      <span class="n">c</span><span class="o">=</span><span class="n">final_labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PCA 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PCA 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Clusters en espacio latente (Autoencoder + KMeans)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etiqueta de Cluster&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5cf772fe179251b33b9288f303b9121bd70e7aa3ee2272560e2c8474b0d297ba.png" src="_images/5cf772fe179251b33b9288f303b9121bd70e7aa3ee2272560e2c8474b0d297ba.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -9332,6 +10036,15 @@ Name: proportion, dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>ETL - EDA</strong></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -9348,8 +10061,7 @@ Name: proportion, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Modelación clustering</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-no-supervisados">Modelos No Supervisados</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-machine-learning">Modelos de Machine Learning</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">Kmeans</a><ul class="visible nav section-nav flex-column">
@@ -9374,6 +10086,15 @@ Name: proportion, dtype: float64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-dbscan-davies-bouldin">Implementacion DBSCAN Davies - Bouldin</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-calinski-harabasz">DBSCAN Calinski - Harabasz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-dbscan-calinski-harabasz">Implementacion DBSCAN Calinski - Harabasz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-dbscan">Gráficos DBSCAN</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-dbscan-davies-bouldin">Gráfica DBSCAN Davies - Bouldin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-dbscan-clinski-harabasz">Gráfica DBSCAN Clinski - Harabasz</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#birch-davies-bouldin">BIRCH Davies_Bouldin</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-devis-bouldin">Implementación Devis - Bouldin</a></li>
 </ul>
@@ -9418,6 +10139,7 @@ Name: proportion, dtype: float64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Calinski_harabasz</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder">autoencoder</a></li>
 </ul>
 </li>
 </ul>
