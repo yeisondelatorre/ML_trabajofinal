@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,7 +181,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html"><strong>ETL - EDA</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Modelación clustering</strong></a></li>
-
 
 
 </ul>
@@ -380,10 +379,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Modelación clustering</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerías</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Selección de Variables</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Selección de Variables</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-machine-learning">Modelos de Machine Learning</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">Kmeans</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#silhouette">Silhouette</a></li>
@@ -470,7 +469,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="modelacion-clustering">
 <h1><strong>Modelación clustering</strong><a class="headerlink" href="#modelacion-clustering" title="Link to this heading">#</a></h1>
 <section id="librerias">
-<h2>Librerias<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h2>
+<h2>Librerías<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
@@ -518,9 +517,8 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="seleccion-de-variables">
-<h1>Selección de Variables<a class="headerlink" href="#seleccion-de-variables" title="Link to this heading">#</a></h1>
+<section id="seleccion-de-variables">
+<h2>Selección de Variables<a class="headerlink" href="#seleccion-de-variables" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;taxi_df.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -683,6 +681,7 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="modelos-de-machine-learning">
 <h1>Modelos de Machine Learning<a class="headerlink" href="#modelos-de-machine-learning" title="Link to this heading">#</a></h1>
 <section id="kmeans">
@@ -748,6 +747,76 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Comenzando la búsqueda de hiperparámetros...
 
 Fitting 3 folds for each of 30 candidates, totalling 90 fits
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Mejores parámetros encontrados:
+{&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}
+
+ Resultados completos ordenados por mejor score:
+
+                                               params  mean_test_score  \
+0   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.769978   
+5   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.769978   
+10  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.769978   
+25  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.712788   
+20  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.712788   
+15  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.712788   
+6   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.658873   
+11  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.658873   
+1   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.658873   
+3   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.554181   
+8   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.554181   
+13  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.554181   
+2   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.545471   
+12  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.545471   
+7   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.545471   
+26  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.539644   
+16  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.539644   
+21  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.539644   
+24  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.512203   
+29  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.512203   
+19  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.512203   
+17  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.510875   
+22  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.510875   
+27  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.510875   
+23  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_cluster...         0.485426   
+28  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_cluster...         0.485426   
+18  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_cluster...         0.485426   
+14  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clus...         0.465872   
+4   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clus...         0.465872   
+9   {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clus...         0.465872   
+
+    std_test_score  mean_fit_time  mean_score_time  
+0         0.082934       0.180018       141.666697  
+5         0.082934       0.274427       125.308863  
+10        0.082934       0.259836       114.532449  
+25        0.002475       1.152550       108.437370  
+20        0.002475       1.046386       110.494165  
+15        0.002475       1.147747       108.467994  
+6         0.084066       0.337976       108.371023  
+11        0.084066       0.263544       109.654086  
+1         0.084066       0.184222       136.428509  
+3         0.005062       0.216557       136.672996  
+8         0.005062       0.412964       109.344097  
+13        0.005062       0.379352       108.154656  
+2         0.038309       0.189496       138.780154  
+12        0.038309       0.287515       108.823328  
+7         0.038309       0.335869       108.478212  
+26        0.001771       1.698764        98.188576  
+16        0.001771       1.489489       108.908136  
+21        0.001771       1.712355       106.485248  
+24        0.001088       2.679520       112.135891  
+29        0.001088       2.985798        66.410560  
+19        0.001088       2.683198       107.530376  
+17        0.088444       1.506908       111.160975  
+22        0.088444       1.950332       109.238674  
+27        0.088444       1.759483        75.340027  
+23        0.009449       2.677578       107.649305  
+28        0.009449       2.702004        70.142395  
+18        0.009449       2.416947       108.659170  
+14        0.065177       0.550950       108.741404  
+4         0.065177       0.260095       141.280972  
+9         0.065177       0.596327       108.857039  
 </pre></div>
 </div>
 </div>
@@ -841,68 +910,70 @@ Calinski-Harabasz Score (final): 86988.6291
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comenzando la búsqueda de hiperparámetros...
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.24 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.28 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.28 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.19 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.29 segundos
 
 Todos los resultados de la búsqueda:
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.05 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.07 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.5514, Tiempo: 0.04 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.6333, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.6586, Tiempo: 0.05 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.6913, Tiempo: 0.06 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.7532, Tiempo: 0.06 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.13 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.16 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.24 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.25 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.12 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.15 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.17 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.23 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.28 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.17 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.28 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (neg_Davies-Bouldin): -0.7254, Tiempo: 0.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (neg_Davies-Bouldin): -0.8062, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (neg_Davies-Bouldin): -0.8251, Tiempo: 0.19 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (neg_Davies-Bouldin): -0.7777, Tiempo: 0.26 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (neg_Davies-Bouldin): -0.6939, Tiempo: 0.29 segundos
 
 Mejores parámetros:  {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}
 </pre></div>
@@ -997,68 +1068,70 @@ Calinski-Harabasz Score (MSE): 86988.6291
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comenzando la búsqueda de hiperparámetros...
 Fitting 3 folds for each of 30 candidates, totalling 90 fits
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.21 segundos
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.29 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.32 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.39 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.48 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.29 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.28 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.31 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.42 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.34 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.37 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.42 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.21 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.21 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.30 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.37 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.20 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.27 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.41 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.43 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.86 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.09 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.39 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 2.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.33 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.86 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.11 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.34 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 2.09 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.77 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.07 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.26 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.55 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 1.49 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.22 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.24 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.31 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.38 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.79 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.08 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.34 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.93 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.74 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.06 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.87 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.01 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.73 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.01 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.42 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 1.40 segundos
 
 Todos los resultados de la búsqueda:
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.21 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.29 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.32 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.39 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.48 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.19 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.29 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.28 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.31 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.42 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.34 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.37 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.42 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.21 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.18 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.21 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.30 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.37 segundos
 Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 22655.3701, Tiempo: 0.20 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.27 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.26 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.41 segundos
-Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.43 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.86 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.09 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.39 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 2.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.33 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.86 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.11 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.34 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 2.09 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.18 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.77 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.07 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.26 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.55 segundos
-Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 1.49 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 28406.8834, Tiempo: 0.22 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 32103.1283, Tiempo: 0.24 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 36640.7579, Tiempo: 0.31 segundos
+Parámetros: {&#39;init&#39;: &#39;k-means++&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 39394.7964, Tiempo: 0.38 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.79 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.08 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.34 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.93 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.20 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.74 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.06 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.25 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.87 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 400, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 2.01 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 2}, Score Promedio (Calinski-Harabasz): 29007.1091, Tiempo: 0.73 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 3}, Score Promedio (Calinski-Harabasz): 25524.0865, Tiempo: 1.01 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 4}, Score Promedio (Calinski-Harabasz): 28275.7980, Tiempo: 1.15 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 5}, Score Promedio (Calinski-Harabasz): 31696.8385, Tiempo: 1.42 segundos
+Parámetros: {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 500, &#39;n_clusters&#39;: 6}, Score Promedio (Calinski-Harabasz): 41687.1613, Tiempo: 1.40 segundos
 
 Mejores parámetros:  {&#39;init&#39;: &#39;random&#39;, &#39;max_iter&#39;: 300, &#39;n_clusters&#39;: 6}
 </pre></div>
@@ -1210,583 +1283,145 @@ Calinski-Harabasz Score (CH): 125011.9021
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔍 Comenzando la búsqueda de hiperparámetros para DBSCAN...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Comenzando la búsqueda de hiperparámetros para DBSCAN...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   1%|          | 1/81 [02:17&lt;3:03:33, 137.66s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   0%|                                                                                 | 0/81 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2037, Tiempo total: 45.88 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   2%|▏         | 2/81 [04:40&lt;3:05:06, 140.59s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2618, Tiempo total: 47.54 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   4%|▎         | 3/81 [07:03&lt;3:04:15, 141.73s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.2622, Tiempo total: 47.68 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   5%|▍         | 4/81 [09:25&lt;3:02:06, 141.91s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.2805, Tiempo total: 47.38 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   6%|▌         | 5/81 [11:45&lt;2:58:53, 141.23s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.2889, Tiempo total: 46.67 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   7%|▋         | 6/81 [14:03&lt;2:55:10, 140.14s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.2600, Tiempo total: 46.00 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   9%|▊         | 7/81 [16:20&lt;2:51:32, 139.09s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3026, Tiempo total: 45.63 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  10%|▉         | 8/81 [18:37&lt;2:48:26, 138.45s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3185, Tiempo total: 45.67 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  11%|█         | 9/81 [20:52&lt;2:44:58, 137.48s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3252, Tiempo total: 45.11 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  12%|█▏        | 10/81 [24:01&lt;3:01:18, 153.22s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2574, Tiempo total: 62.82 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  14%|█▎        | 11/81 [27:09&lt;3:11:12, 163.90s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2908, Tiempo total: 62.69 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  15%|█▍        | 12/81 [30:20&lt;3:17:54, 172.09s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3110, Tiempo total: 63.60 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  16%|█▌        | 13/81 [33:28&lt;3:20:32, 176.95s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3128, Tiempo total: 62.71 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  17%|█▋        | 14/81 [36:37&lt;3:21:38, 180.58s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3235, Tiempo total: 62.98 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  19%|█▊        | 15/81 [39:46&lt;3:21:17, 182.99s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3244, Tiempo total: 62.85 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  20%|█▉        | 16/81 [42:55&lt;3:20:23, 184.97s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3227, Tiempo total: 63.18 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  21%|██        | 17/81 [46:07&lt;3:19:22, 186.92s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3116, Tiempo total: 63.81 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  22%|██▏       | 18/81 [49:16&lt;3:17:04, 187.69s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3271, Tiempo total: 63.16 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  23%|██▎       | 19/81 [53:00&lt;3:25:08, 198.53s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3205, Tiempo total: 74.58 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  25%|██▍       | 20/81 [56:45&lt;3:29:50, 206.41s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3222, Tiempo total: 74.92 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  26%|██▌       | 21/81 [1:00:29&lt;3:31:45, 211.76s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3202, Tiempo total: 74.74 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  27%|██▋       | 22/81 [1:04:13&lt;3:31:44, 215.34s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3228, Tiempo total: 74.55 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  28%|██▊       | 23/81 [1:07:55&lt;3:30:15, 217.50s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3197, Tiempo total: 74.18 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  30%|██▉       | 24/81 [1:11:43&lt;3:29:29, 220.51s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3238, Tiempo total: 75.83 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  31%|███       | 25/81 [1:15:38&lt;3:29:51, 224.85s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3288, Tiempo total: 78.32 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  32%|███▏      | 26/81 [1:19:25&lt;3:26:51, 225.66s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3287, Tiempo total: 75.85 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  33%|███▎      | 27/81 [1:22:53&lt;3:18:22, 220.42s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3290, Tiempo total: 69.38 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  35%|███▍      | 28/81 [1:26:50&lt;3:18:59, 225.27s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3293, Tiempo total: 78.85 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  36%|███▌      | 29/81 [1:30:41&lt;3:16:51, 227.14s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3314, Tiempo total: 77.16 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  37%|███▋      | 30/81 [1:34:32&lt;3:13:50, 228.05s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3298, Tiempo total: 76.72 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  38%|███▊      | 31/81 [1:38:24&lt;3:11:08, 229.38s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3241, Tiempo total: 77.48 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  40%|███▉      | 32/81 [1:42:14&lt;3:07:22, 229.44s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3279, Tiempo total: 76.52 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  41%|████      | 33/81 [1:46:04&lt;3:03:40, 229.60s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3259, Tiempo total: 76.65 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  42%|████▏     | 34/81 [1:49:55&lt;3:00:09, 229.99s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3278, Tiempo total: 76.96 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  43%|████▎     | 35/81 [1:53:45&lt;2:56:24, 230.10s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3288, Tiempo total: 76.77 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  44%|████▍     | 36/81 [1:57:37&lt;2:53:00, 230.67s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3273, Tiempo total: 77.33 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  46%|████▌     | 37/81 [2:01:48&lt;2:53:43, 236.91s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3365, Tiempo total: 83.81 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  47%|████▋     | 38/81 [2:05:50&lt;2:50:44, 238.24s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3336, Tiempo total: 80.44 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  48%|████▊     | 39/81 [2:09:51&lt;2:47:21, 239.09s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3321, Tiempo total: 80.35 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  49%|████▉     | 40/81 [2:13:49&lt;2:43:06, 238.70s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3306, Tiempo total: 79.26 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  51%|█████     | 41/81 [2:17:47&lt;2:39:05, 238.64s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3255, Tiempo total: 79.49 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  52%|█████▏    | 42/81 [2:21:45&lt;2:34:54, 238.32s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3286, Tiempo total: 79.18 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  53%|█████▎    | 43/81 [2:25:42&lt;2:30:45, 238.04s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3278, Tiempo total: 79.13 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  54%|█████▍    | 44/81 [2:29:40&lt;2:26:48, 238.07s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3306, Tiempo total: 79.37 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  56%|█████▌    | 45/81 [2:33:38&lt;2:22:49, 238.05s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3314, Tiempo total: 79.33 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  57%|█████▋    | 46/81 [2:37:49&lt;2:21:10, 242.01s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3423, Tiempo total: 83.74 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  58%|█████▊    | 47/81 [2:42:03&lt;2:19:01, 245.33s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3388, Tiempo total: 84.35 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  59%|█████▉    | 48/81 [2:46:15&lt;2:16:05, 247.43s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3366, Tiempo total: 84.10 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  60%|██████    | 49/81 [2:50:26&lt;2:12:36, 248.64s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3324, Tiempo total: 83.81 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  62%|██████▏   | 50/81 [2:54:38&lt;2:08:59, 249.66s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3315, Tiempo total: 84.01 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  63%|██████▎   | 51/81 [2:58:50&lt;2:05:12, 250.40s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3299, Tiempo total: 84.04 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  64%|██████▍   | 52/81 [3:03:02&lt;2:01:12, 250.78s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3296, Tiempo total: 83.88 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  65%|██████▌   | 53/81 [3:07:13&lt;1:56:59, 250.69s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3287, Tiempo total: 83.48 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  67%|██████▋   | 54/81 [3:11:24&lt;1:52:57, 251.03s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3300, Tiempo total: 83.94 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  68%|██████▊   | 55/81 [3:15:53&lt;1:50:59, 256.15s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3471, Tiempo total: 89.35 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  69%|██████▉   | 56/81 [3:20:19&lt;1:48:03, 259.36s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3442, Tiempo total: 88.94 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  70%|███████   | 57/81 [3:24:45&lt;1:44:29, 261.21s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3392, Tiempo total: 88.50 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  72%|███████▏  | 58/81 [3:29:10&lt;1:40:35, 262.40s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3361, Tiempo total: 88.38 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  73%|███████▎  | 59/81 [3:33:35&lt;1:36:32, 263.29s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3331, Tiempo total: 88.46 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  74%|███████▍  | 60/81 [3:38:04&lt;1:32:39, 264.74s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3331, Tiempo total: 89.36 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  75%|███████▌  | 61/81 [3:42:29&lt;1:28:17, 264.89s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3330, Tiempo total: 88.41 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  77%|███████▋  | 62/81 [3:46:53&lt;1:23:51, 264.81s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3316, Tiempo total: 88.21 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  78%|███████▊  | 63/81 [3:51:22&lt;1:19:47, 266.00s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3285, Tiempo total: 89.58 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  79%|███████▉  | 64/81 [3:56:01&lt;1:16:27, 269.83s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3524, Tiempo total: 92.91 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  80%|████████  | 65/81 [4:00:36&lt;1:12:22, 271.44s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3475, Tiempo total: 91.72 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  81%|████████▏ | 66/81 [4:05:09&lt;1:07:55, 271.73s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3431, Tiempo total: 90.79 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  83%|████████▎ | 67/81 [4:09:41&lt;1:03:24, 271.79s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3398, Tiempo total: 90.63 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  84%|████████▍ | 68/81 [4:14:12&lt;58:52, 271.77s/it]  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3370, Tiempo total: 90.56 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  85%|████████▌ | 69/81 [4:18:45&lt;54:26, 272.18s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3354, Tiempo total: 91.04 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  86%|████████▋ | 70/81 [4:23:21&lt;50:06, 273.32s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3343, Tiempo total: 91.99 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  88%|████████▊ | 71/81 [4:27:57&lt;45:39, 273.95s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3336, Tiempo total: 91.79 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  89%|████████▉ | 72/81 [4:32:30&lt;41:03, 273.71s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3326, Tiempo total: 91.04 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  90%|█████████ | 73/81 [4:39:26&lt;42:11, 316.38s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2926, Tiempo total: 138.62 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  91%|█████████▏| 74/81 [4:46:13&lt;40:04, 343.49s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2928, Tiempo total: 135.54 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  93%|█████████▎| 75/81 [4:53:03&lt;36:20, 363.44s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.2922, Tiempo total: 136.64 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  94%|█████████▍| 76/81 [4:59:53&lt;31:27, 377.58s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.2886, Tiempo total: 136.83 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  95%|█████████▌| 77/81 [5:06:44&lt;25:49, 387.46s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.2856, Tiempo total: 136.81 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  96%|█████████▋| 78/81 [5:13:33&lt;19:41, 393.89s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.2849, Tiempo total: 136.27 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  98%|█████████▊| 79/81 [5:20:25&lt;13:19, 399.58s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.2815, Tiempo total: 137.59 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  99%|█████████▉| 80/81 [5:27:16&lt;06:42, 402.95s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.2781, Tiempo total: 136.91 segundos
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando: 100%|██████████| 81/81 [5:34:03&lt;00:00, 247.45s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.2819, Tiempo total: 135.65 segundos
-
-📊 Resultados de la búsqueda:
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2037, Tiempo: 45.88 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2618, Tiempo: 47.54 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.2622, Tiempo: 47.68 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.2805, Tiempo: 47.38 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.2889, Tiempo: 46.67 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.2600, Tiempo: 46.00 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3026, Tiempo: 45.63 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3185, Tiempo: 45.67 s
-Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3252, Tiempo: 45.11 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2574, Tiempo: 62.82 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2908, Tiempo: 62.69 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3110, Tiempo: 63.60 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3128, Tiempo: 62.71 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3235, Tiempo: 62.98 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3244, Tiempo: 62.85 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3227, Tiempo: 63.18 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3116, Tiempo: 63.81 s
-Parámetros: {&#39;eps&#39;: 0.2, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3271, Tiempo: 63.16 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3205, Tiempo: 74.58 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3222, Tiempo: 74.92 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3202, Tiempo: 74.74 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3228, Tiempo: 74.55 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3197, Tiempo: 74.18 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3238, Tiempo: 75.83 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3288, Tiempo: 78.32 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3287, Tiempo: 75.85 s
-Parámetros: {&#39;eps&#39;: 0.30000000000000004, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3290, Tiempo: 69.38 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3293, Tiempo: 78.85 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3314, Tiempo: 77.16 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3298, Tiempo: 76.72 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3241, Tiempo: 77.48 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3279, Tiempo: 76.52 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3259, Tiempo: 76.65 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3278, Tiempo: 76.96 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3288, Tiempo: 76.77 s
-Parámetros: {&#39;eps&#39;: 0.4, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3273, Tiempo: 77.33 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3365, Tiempo: 83.81 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3336, Tiempo: 80.44 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3321, Tiempo: 80.35 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3306, Tiempo: 79.26 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3255, Tiempo: 79.49 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3286, Tiempo: 79.18 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3278, Tiempo: 79.13 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3306, Tiempo: 79.37 s
-Parámetros: {&#39;eps&#39;: 0.5, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3314, Tiempo: 79.33 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3423, Tiempo: 83.74 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3388, Tiempo: 84.35 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3366, Tiempo: 84.10 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3324, Tiempo: 83.81 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3315, Tiempo: 84.01 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3299, Tiempo: 84.04 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3296, Tiempo: 83.88 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3287, Tiempo: 83.48 s
-Parámetros: {&#39;eps&#39;: 0.6, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3300, Tiempo: 83.94 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3471, Tiempo: 89.35 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3442, Tiempo: 88.94 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3392, Tiempo: 88.50 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3361, Tiempo: 88.38 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3331, Tiempo: 88.46 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3331, Tiempo: 89.36 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3330, Tiempo: 88.41 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3316, Tiempo: 88.21 s
-Parámetros: {&#39;eps&#39;: 0.7000000000000001, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3285, Tiempo: 89.58 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.3524, Tiempo: 92.91 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.3475, Tiempo: 91.72 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.3431, Tiempo: 90.79 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.3398, Tiempo: 90.63 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.3370, Tiempo: 90.56 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.3354, Tiempo: 91.04 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3343, Tiempo: 91.99 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3336, Tiempo: 91.79 s
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3326, Tiempo: 91.04 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2926, Tiempo: 138.62 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2928, Tiempo: 135.54 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.2922, Tiempo: 136.64 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.2886, Tiempo: 136.83 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.2856, Tiempo: 136.81 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.2849, Tiempo: 136.27 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.2815, Tiempo: 137.59 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.2781, Tiempo: 136.91 s
-Parámetros: {&#39;eps&#39;: 0.9, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.2819, Tiempo: 135.65 s
-
-✅ Mejores parámetros encontrados para DBSCAN:
-Parámetros: {&#39;eps&#39;: 0.8, &#39;min_samples&#39;: 5}
-🏆 Mejor Silhouette Score: 0.3524
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   0%|                                                                                 | 0/81 [02:01&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   1%|▊                                                                     | 1/81 [02:01&lt;2:41:40, 121.25s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 5}, Silhouette Score Promedio: 0.2037, Tiempo total: 40.42 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   1%|▊                                                                     | 1/81 [04:02&lt;2:41:40, 121.25s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   2%|█▋                                                                    | 2/81 [04:02&lt;2:39:57, 121.49s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 10}, Silhouette Score Promedio: 0.2618, Tiempo total: 40.55 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   2%|█▋                                                                    | 2/81 [06:03&lt;2:39:57, 121.49s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   4%|██▌                                                                   | 3/81 [06:03&lt;2:37:33, 121.20s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 15}, Silhouette Score Promedio: 0.2622, Tiempo total: 40.27 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   4%|██▌                                                                   | 3/81 [08:04&lt;2:37:33, 121.20s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   5%|███▍                                                                  | 4/81 [08:04&lt;2:35:18, 121.01s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 20}, Silhouette Score Promedio: 0.2805, Tiempo total: 40.24 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   5%|███▍                                                                  | 4/81 [10:05&lt;2:35:18, 121.01s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   6%|████▎                                                                 | 5/81 [10:05&lt;2:33:10, 120.93s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 25}, Silhouette Score Promedio: 0.2889, Tiempo total: 40.25 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   6%|████▎                                                                 | 5/81 [12:06&lt;2:33:10, 120.93s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   7%|█████▏                                                                | 6/81 [12:06&lt;2:31:07, 120.89s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 30}, Silhouette Score Promedio: 0.2600, Tiempo total: 40.27 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   7%|█████▏                                                                | 6/81 [14:06&lt;2:31:07, 120.89s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   9%|██████                                                                | 7/81 [14:06&lt;2:28:54, 120.74s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 35}, Silhouette Score Promedio: 0.3026, Tiempo total: 40.14 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:   9%|██████                                                                | 7/81 [16:07&lt;2:28:54, 120.74s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  10%|██████▉                                                               | 8/81 [16:07&lt;2:26:50, 120.70s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 40}, Silhouette Score Promedio: 0.3185, Tiempo total: 40.19 segundos
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  10%|██████▉                                                               | 8/81 [18:07&lt;2:26:50, 120.70s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buscando:  11%|███████▊                                                              | 9/81 [18:07&lt;2:24:49, 120.69s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros: {&#39;eps&#39;: 0.1, &#39;min_samples&#39;: 45}, Silhouette Score Promedio: 0.3252, Tiempo total: 40.21 segundos
 </pre></div>
 </div>
 </div>
@@ -9644,10 +9279,10 @@ Name: proportion, dtype: float64
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Modelación clustering</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerías</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Selección de Variables</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Selección de Variables</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-machine-learning">Modelos de Machine Learning</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">Kmeans</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#silhouette">Silhouette</a></li>

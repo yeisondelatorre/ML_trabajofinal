@@ -26,12 +26,12 @@ Traceback (most recent call last):
     error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
   File "C:\Users\PC\miniconda3\envs\ml_venv\lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
     raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 1200 seconds.
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# Definir el rango de parámetros para el ajuste', 'param_grid = {', "    'n_clusters': [2, 3, 4, 5, 6],", "    'init': ['k-means++', 'random'],", "    'max_iter': [300, 400, 500]"]
+['# Definir el rango de parámetros para DBSCAN', 'param_grid_dbscan = [', "    {'eps': eps, 'min_samples': min_samples}", '    for eps in np.arange(0.1, 1.0, 0.1)', '    for min_samples in range(5, 50, 5)']
 ...
-["results_df_sorted = results_df.sort_values(by='mean_test_score', ascending=False)", '', '# Mostrar todo', "pd.set_option('display.max_rows', None)  # Mostrar todas las filas", 'print(results_df_sorted)']
+['best_score_dbscan = best_result[1]', '', 'print("\\n Mejores parámetros encontrados para DBSCAN:")', 'print(f"Parámetros: {best_params_dbscan}")', 'print(f" Mejor Silhouette Score: {best_score_dbscan:.4f}")']
 -------------------
 
