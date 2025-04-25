@@ -15,129 +15,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-
-# Ruta para guardar resultados CSV
-resultados_csv_path = r"C:\Users\Downloads\resultados_som.csv"
-
-# Cargar backup si existe
-try:
-    with open(r"C:\Users\Downloads\Cluster.pkl", 'rb') as f:
-        backup = pickle.load(f)
-except:
-    backup = {}
-
-results = []
-scaler = StandardScaler()
-data_scaled = scaler.fit_transform(data)
-
-# Generar combinaciones
-combinaciones = list(product(*params.values()))
-total_iter = len(combinaciones)
-start_total = time.time()
-
-# Iterar con barra de progreso
-with tqdm(total=total_iter, desc="Entrenando modelos") as pbar:
-    for idx, i in enumerate(combinaciones):
-        if i in backup:
-            pbar.update(1)
-            continue
-        
-        try:
-            start_iter = time.time()
-            print(f"\n▶ Iteración {idx+1}/{total_iter} - Configuración: {i}")
-
-            # Dimensiones
-            input_dim = data.shape[1]
-            encoding_dim = i[params_idx['Encoding_Dim']]
-
-            # Encoder
-            enc_layers = [
-                keras.layers.Dense(i[params_idx['Neurons']], activation=i[params_idx['Activation']], input_shape=(input_dim,))
-                for _ in range(i[params_idx['Layers']])
-            ]
-            enc_layers.append(keras.layers.Dense(encoding_dim, activation='relu'))
-            encoder = keras.Sequential(enc_layers)
-
-            # Decoder
-            dec_layers = [
-                keras.layers.Dense(i[params_idx['Neurons']], activation=i[params_idx['Activation']], input_shape=(encoding_dim,))
-                for _ in range(i[params_idx['Layers']])
-            ]
-            dec_layers.append(keras.layers.Dense(input_dim, activation='sigmoid'))
-            decoder = keras.Sequential(dec_layers)
-
-            # Autoencoder
-            autoencoder = keras.Sequential([encoder, decoder])
-            autoencoder.compile(optimizer=i[params_idx['Optimizer']], loss=i[params_idx['Loss']])
-            autoencoder.fit(data_scaled, data_scaled, epochs=i[params_idx['Epochs']], batch_size=i[params_idx['BS']], verbose=0)
-
-            # Codificación
-            encoded_data = encoder.predict(data_scaled)
-
-            # SOM
-            som = MiniSom(i[params_idx['X']], i[params_idx['Y']], encoding_dim,
-                          sigma=i[params_idx['Sigma']], learning_rate=i[params_idx['LR']])
-            som.random_weights_init(encoded_data)
-            som.train_random(encoded_data, i[params_idx['Iterations']])
-
-            # Etiquetas
-            som_labels = np.array([som.winner(x) for x in encoded_data])
-            som_clusters = np.array([j[0] * i[params_idx['X']] + j[1] for j in som_labels])
-
-            dummy= pd.DataFrame(som_clusters, columns=['Clus'])
-            n_clus=len(dummy['Clus'].unique())
-            dummy = dummy.groupby('Clus').agg({'Clus':'count'})
-            dummy = (dummy/dummy.sum())['Clus'].values
-            
-
-            # Evaluación
-            silhouette_combined = silhouette_score(encoded_data, som_clusters)
-            davies_bouldin_combined = davies_bouldin_score(encoded_data, som_clusters)
-            calinski_harabasz_combined = calinski_harabasz_score(encoded_data, som_clusters)
-
-            # Guardar modelos .h5
-            name = f"encdim{encoding_dim}_layers{i[params_idx['Layers']]}_neurons{i[params_idx['Neurons']]}"
-            encoder.save(f"encoder_{name}.h5")
-            autoencoder.save(f"autoencoder_{name}.h5")
-
-            # Registro de resultados
-            row = i + (silhouette_combined, davies_bouldin_combined, calinski_harabasz_combined) + (n_clus,dummy)
-            backup[i] = row
-            results.append(row)
-
-            # Guardar backup .pkl
-            with open(r"C:\Users\sherazoa\Downloads\Cluster.pkl", 'wb') as handle:
-                pickle.dump(backup, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-            # Guardar resultados parciales .csv
-            columnas = list(params.keys()) + ['silhouette', 'davies_bouldin', 'calinski_harabasz'] + ['Clusters', 'Distribución']
-            df_resultados = pd.DataFrame(results, columns=columnas)
-            df_resultados.to_csv(resultados_csv_path, index=False)
-
-            # Tiempo iteración
-            elapsed = round(time.time() - start_iter, 2)
-            print(f"⏱️ Iteración completada en {elapsed} segundos")
-
-        except Exception as e:
-            print(f"❌ Error en la configuración {i}: {e}")
-        
-        pbar.update(1)
-
-# Tiempo total
-total_time = round(time.time() - start_total, 2)
-print(f"\n✅ Ejecución finalizada en {total_time} segundos")
-
+with open(r"C:\Users\kcarrascal\Downloads\Machine_Learning\X_sample.pkl", 'rb') as f:
+    data = pickle.load(f)
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[4], line 13[0m
-[0;32m     11[0m results [38;5;241m=[39m []
-[0;32m     12[0m scaler [38;5;241m=[39m StandardScaler()
-[1;32m---> 13[0m data_scaled [38;5;241m=[39m scaler[38;5;241m.[39mfit_transform([43mdata[49m)
-[0;32m     15[0m [38;5;66;03m# Generar combinaciones[39;00m
-[0;32m     16[0m combinaciones [38;5;241m=[39m [38;5;28mlist[39m(product([38;5;241m*[39mparams[38;5;241m.[39mvalues()))
+[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [1;32mIn[3], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mwith[39;00m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43mr[39;49m[38;5;124;43m"[39;49m[38;5;124;43mC:[39;49m[38;5;124;43m\[39;49m[38;5;124;43mUsers[39;49m[38;5;124;43m\[39;49m[38;5;124;43mkcarrascal[39;49m[38;5;124;43m\[39;49m[38;5;124;43mDownloads[39;49m[38;5;124;43m\[39;49m[38;5;124;43mMachine_Learning[39;49m[38;5;124;43m\[39;49m[38;5;124;43mX_sample.pkl[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m f:
+[0;32m      2[0m     data [38;5;241m=[39m pickle[38;5;241m.[39mload(f)
 
-[1;31mNameError[0m: name 'data' is not defined
+File [1;32m~\miniconda3\envs\ml_venv\lib\site-packages\IPython\core\interactiveshell.py:310[0m, in [0;36m_modified_open[1;34m(file, *args, **kwargs)[0m
+[0;32m    303[0m [38;5;28;01mif[39;00m file [38;5;129;01min[39;00m {[38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m2[39m}:
+[0;32m    304[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[0;32m    305[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mIPython won[39m[38;5;124m'[39m[38;5;124mt let you open fd=[39m[38;5;132;01m{[39;00mfile[38;5;132;01m}[39;00m[38;5;124m by default [39m[38;5;124m"[39m
+[0;32m    306[0m         [38;5;124m"[39m[38;5;124mas it is likely to crash IPython. If you know what you are doing, [39m[38;5;124m"[39m
+[0;32m    307[0m         [38;5;124m"[39m[38;5;124myou can use builtins[39m[38;5;124m'[39m[38;5;124m open.[39m[38;5;124m"[39m
+[0;32m    308[0m     )
+[1;32m--> 310[0m [38;5;28;01mreturn[39;00m io_open(file, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'C:\\Users\\kcarrascal\\Downloads\\Machine_Learning\\X_sample.pkl'
 
